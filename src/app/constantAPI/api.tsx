@@ -1,5 +1,5 @@
-import navFeaturedImg from '../../../public/navFeaturedImg.png';
-import navFeatured from '../../../public/next.svg';
+import navFeaturedImg from '../../../public/img1.jpg';
+import navFeatured from '../../../public/img2.png';
 
 export const navApi = [
  
