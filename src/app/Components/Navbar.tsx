@@ -21,51 +21,51 @@ import {colorPalleteWise , colors_array,randowColors } from '../constantAPI/colo
 const Navbar = () => {
 
   // this is for random colors in shadow or bg 
-  let windowWidth = ""
-  if(typeof window != 'undefined'){
-     windowWidth = window.innerWidth.toFixed(0)
+  // let windowWidth = ""
+  // if(typeof window != 'undefined'){
+  //    windowWidth = window.innerWidth.toFixed(0)
 
-  }else{
-   windowWidth = "1920"
-  }
-  const max = parseInt(windowWidth) 
-  const min = 0
-  // console.log("max:",typeof parseInt(max));
+  // }else{
+  //  windowWidth = "1920"
+  // }
+  // const max = parseInt(windowWidth) 
+  // const min = 0
+  // // console.log("max:",typeof parseInt(max));
   
 
 
-  const [color, setColor] = useState<string>(colors_array[0])
-  const [colorIndex, setColorIndex] = useState<number>(0)
-  const [offsetX, setOffsetX] = useState<number>(0)  /// offsetY is fixed b/c height of container
-  const [incX,setIncX] = useState(true); //width++ else width set to zero
+  // const [color, setColor] = useState<string>(colors_array[0])
+  // const [colorIndex, setColorIndex] = useState<number>(0)
+  // const [offsetX, setOffsetX] = useState<number>(0)  /// offsetY is fixed b/c height of container
+  // const [incX,setIncX] = useState(true); //width++ else width set to zero
 
 
 
-  const colorsArrayLength = colors_array.length
-  setTimeout(()=>{
+  // const colorsArrayLength = colors_array.length
+  // setTimeout(()=>{
   
-        if(colorIndex < colorsArrayLength ){
-          setColorIndex(colorIndex + 1)
-        }else{
-          setColorIndex(0)
-        }
+  //       if(colorIndex < colorsArrayLength ){
+  //         setColorIndex(colorIndex + 1)
+  //       }else{
+  //         setColorIndex(0)
+  //       }
         
       
-  },200)
+  // },200)
 
-  setTimeout(()=>{
+  // setTimeout(()=>{
  
-    if(offsetX < max ){
-      setOffsetX(offsetX +35)
-    }else{
-      setOffsetX(0)
+  //   if(offsetX < max ){
+  //     setOffsetX(offsetX +35)
+  //   }else{
+  //     setOffsetX(0)
     
-    }
+  //   }
 
     
 
-  },
-  80)
+  // },
+  // 80)
 
   
 
@@ -97,17 +97,17 @@ const Navbar = () => {
     
     <header
       className="z-50 lg:w-full w-full h-16 lg:h-20  text-white sticky top-0 
-    border-b border-gray-500
+    border-b border-gray-500 bg-black bg-opacity-40
     "
     >
 
       {/* for navbar Shadow  */}
-      <div style={{left:`${offsetX-40}px`,backgroundColor:`${colors_array[colorIndex!+1]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`}}
+      {/* <div style={{left:`${offsetX-40}px`,backgroundColor:`${colors_array[colorIndex!+1]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`}}
        className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0  rounded-l duration-200 opacity-25 shadow-lg '  />
 <div style={{left:`${offsetX}px`,backgroundColor:`${colors_array[colorIndex]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`}}
        className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0   duration-200 opacity-25 shadow-lg'  />
 <div style={{left:`${offsetX+40}px`,backgroundColor:`${colors_array[colorIndex!-1]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`,}}
-       className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0  rounded-r duration-200 opacity-25 shadow-lg'  />
+       className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0  rounded-r duration-200 opacity-25 shadow-lg'  /> */}
 
 
       <div className="z-40 relative hidden lg:flex items-center justify-between h-20 px-10">

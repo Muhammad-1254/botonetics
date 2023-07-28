@@ -98,3 +98,59 @@ export const navApi = [
     ],
   },
 ];
+
+
+
+export const servicesCard = [
+
+  {
+    id:0,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:1,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:2,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:3,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:4,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:5,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  {
+    id:6,
+    title:"App developemnt",
+    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
+    image:navFeaturedImg,
+    link:''
+  },
+  
+]

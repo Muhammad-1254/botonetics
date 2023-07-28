@@ -13,7 +13,11 @@ module.exports = {
      },
      colors:{
       primaryColor:'#0072F6',
-      darkPrimary:"#0063d5"
+      darkPrimary:"#0063d5",
+      secondaryColor:"#0063d5",
+      headingText:'#FFFFFF',
+      normalText:"rgb(107 114 128) "
+
      }
     },
   },
