@@ -21,9 +21,15 @@ import {colorPalleteWise , colors_array,randowColors } from '../constantAPI/colo
 const Navbar = () => {
 
   // this is for random colors in shadow or bg 
-  let windowWidth = window.innerWidth.toFixed(0)
+  let windowWidth = ""
+  if(typeof window != 'undefined'){
+     windowWidth = window.innerWidth.toFixed(0)
+
+  }else{
+   windowWidth = "1920"
+  }
+  const max = parseInt(windowWidth) 
   const min = 0
-  const max = parseInt(windowWidth)
   // console.log("max:",typeof parseInt(max));
   
 
@@ -49,7 +55,7 @@ const Navbar = () => {
 
   setTimeout(()=>{
  
-    if(offsetX < max){
+    if(offsetX < max ){
       setOffsetX(offsetX +35)
     }else{
       setOffsetX(0)
