@@ -9,11 +9,14 @@ import img4 from '../../../public/img4.jpg';
 import Image from 'next/image';
 
 import {colors_array} from '@/app/constantAPI/colors' 
+import { shapes } from '../constantAPI/shadowCirlce';
 const Hero = () => {
   // const colors_array = ["red","green","blue"]
+  let min =-50
+  let max = 50
 
-  const [offsetX,setOffsetX] =useState<number>(-10)
-  const [offsetY,setOffsetY] =useState<number>(50)
+  const [offsetX,setOffsetX] =useState<number>(shapes.square.x)
+  const [offsetY,setOffsetY] =useState<number>(shapes.square.y)
   const [color,setColor] =useState(colors_array[0])
   const [colorIndex,setColorIndex] =useState(0)
   const [incX,setIncX] =useState(false)
@@ -22,9 +25,7 @@ const Hero = () => {
 
 
   // for x and y direction indicators 
-  let min =-50
-  let max = 50
-
+  
 
     
   setTimeout(()=>{
@@ -41,7 +42,7 @@ const Hero = () => {
     // console.log(color);
 
     
-  },500)
+  },250)
 
     setTimeout(()=>{
      
@@ -79,11 +80,40 @@ const Hero = () => {
 
 
   return(
-    <div className='flex items-center justify-center w-full h-[75vh] mx-auto '>
+    <div className='flex flex-wrap items-center justify-between w-[80vw]  gap-48 mx-auto '>
+      {/* square  */}
       <div style={{
-         boxShadow:`${offsetX}px ${offsetY}px 40px -20px ${color}`
+         boxShadow:`${offsetX}px ${offsetY}px 50px -30px ${color}`
       }}
-      className={`duration-200 w-[400px] h-[400px]  rounded-xl`}>
+      className={`duration-[250ms] w-[400px] h-[400px]  rounded-xl`}>
+
+      </div>
+
+        {/* circle  */}
+      <div style={{
+         boxShadow:`${offsetX}px ${offsetY}px 100px -50px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[400px]  rounded-full`}>
+
+      </div>
+      {/* rectangle */}
+      <div style={{
+         boxShadow:`${offsetX}px ${offsetY}px 35px -25px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[250px] border  rounded-2xl`}>
+
+      </div>
+
+      <div style={{
+         boxShadow:`${offsetX}px ${offsetY}px 50px -30px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[400px]  rounded-xl`}>
+
+      </div>
+      <div style={{
+         boxShadow:`${offsetX}px ${offsetY}px 50px -30px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[400px]  rounded-xl`}>
 
       </div>
     </div>
