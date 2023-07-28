@@ -80,7 +80,7 @@ const Hero = () => {
 
 
   return(
-    <div className='flex flex-wrap items-center justify-between w-[80vw]  gap-48 mx-auto '>
+    <div className='text-gray-200 flex flex-wrap items-center justify-between  w-[80vw] gap-48 my-40  mx-auto  '>
       {/* square  */}
       <div style={{
          boxShadow:`${offsetX}px ${offsetY}px 50px -30px ${color}`
@@ -94,14 +94,51 @@ const Hero = () => {
          boxShadow:`${offsetX}px ${offsetY}px 100px -50px ${color}`
       }}
       className={`duration-[250ms] w-[400px] h-[400px]  rounded-full`}>
+        <Image className='w-full h-full rounded-full object-cover object-bottom ' src={img1} alt='img'/>
+      </div>
 
+      <div style={{
+         boxShadow:`${offsetX}px ${offsetY}px 100px -50px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[400px]  rounded-full`}>
       </div>
       {/* rectangle */}
       <div style={{
          boxShadow:`${offsetX}px ${offsetY}px 35px -25px ${color}`
       }}
-      className={`duration-[250ms] w-[400px] h-[250px] border  rounded-2xl`}>
+      className={`duration-[250ms] w-[400px] h-[250px]   rounded-2xl`}>
+<div className='w-full h-full overflow-hidden
+flex items-start justify-normal '>
 
+  <div className='border text-ellipsis h-full rounded-l-xl -mr-1 w-[50%] flex flex-col items-start  justify-normal gap-y5'>
+<h1 className='m-2 text-2xl text-center text-ellipsis'>App Developement</h1>
+<p className='text-start p-2 mx-auto '>non nostrud Excepteur  velit laborum exercitation sunt minim adipiscing ullamco minim.</p>
+</div>
+
+<div className='w-[50%] h-full'>
+  <Image className={'w-full h-full object-cover object-center rounded-r-xl'} src={img1} alt='img'/>
+</div>
+</div>
+      </div>
+
+
+
+      <div style={{
+         boxShadow:`${Math.floor(offsetX/1.5)}px ${offsetY}px 35px -30px ${color}`
+      }}
+      className={`duration-[250ms] w-[400px] h-[250px]   rounded-2xl`}>
+<div className='w-full h-full overflow-hidden
+flex items-start justify-normal '>
+
+  <div className=' text-ellipsis h-full rounded-l-xl -mr-1 w-[50%] flex flex-col items-start  justify-normal gap-y5'>
+<h1 className='m-2 text-2xl text-center text-ellipsis'>App Developement</h1>
+<p className='text-start p-2 mx-auto '>non nostrud Excepteur  velit laborum exercitation sunt minim adipiscing ullamco minim.</p>
+</div>
+
+<div className='w-[50%] h-full'>
+  <Image className={'w-full h-full object-cover object-center rounded-r-xl'} src={img1} alt='img'/>
+</div>
+</div>
       </div>
 
       <div style={{
