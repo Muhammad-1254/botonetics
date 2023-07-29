@@ -16,7 +16,8 @@ module.exports = {
       darkPrimary:"#0063d5",
       secondaryColor:"#0063d5",
       headingText:'#FFFFFF',
-      normalText:"rgb(107 114 128) "
+      normalText:"rgb(107 114 128)",
+      bg:'black'
 
      }
     },

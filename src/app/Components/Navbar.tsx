@@ -15,63 +15,12 @@ import {
   AiOutlineRight,
   AiOutlineUp,
 } from 'react-icons/ai';
-import { shapes } from '../constantAPI/shadowCirlce';
-import {colorPalleteWise , colors_array,randowColors } from '../constantAPI/colors';
 
 const Navbar = () => {
 
-  // this is for random colors in shadow or bg 
-  // let windowWidth = ""
-  // if(typeof window != 'undefined'){
-  //    windowWidth = window.innerWidth.toFixed(0)
-
-  // }else{
-  //  windowWidth = "1920"
-  // }
-  // const max = parseInt(windowWidth) 
-  // const min = 0
-  // // console.log("max:",typeof parseInt(max));
-  
 
 
-  // const [color, setColor] = useState<string>(colors_array[0])
-  // const [colorIndex, setColorIndex] = useState<number>(0)
-  // const [offsetX, setOffsetX] = useState<number>(0)  /// offsetY is fixed b/c height of container
-  // const [incX,setIncX] = useState(true); //width++ else width set to zero
-
-
-
-  // const colorsArrayLength = colors_array.length
-  // setTimeout(()=>{
-  
-  //       if(colorIndex < colorsArrayLength ){
-  //         setColorIndex(colorIndex + 1)
-  //       }else{
-  //         setColorIndex(0)
-  //       }
-        
-      
-  // },200)
-
-  // setTimeout(()=>{
  
-  //   if(offsetX < max ){
-  //     setOffsetX(offsetX +35)
-  //   }else{
-  //     setOffsetX(0)
-    
-  //   }
-
-    
-
-  // },
-  // 80)
-
-  
-
-  
-  
-    // randdom colrs till here 
 
 
 
@@ -96,42 +45,36 @@ const Navbar = () => {
     <>
     
     <header
-      className="z-50 lg:w-full w-full h-16 lg:h-20  text-white sticky top-0 
-    border-b border-gray-500 bg-black bg-opacity-40
+      className="z-50 lg:w-full w-full h-16 lg:h-20   sticky top-0 
+    border-b border-white bg-black bg-opacity-40 text-normalText group/lgHoverborderNone
     "
     >
 
-      {/* for navbar Shadow  */}
-      {/* <div style={{left:`${offsetX-40}px`,backgroundColor:`${colors_array[colorIndex!+1]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`}}
-       className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0  rounded-l duration-200 opacity-25 shadow-lg '  />
-<div style={{left:`${offsetX}px`,backgroundColor:`${colors_array[colorIndex]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`}}
-       className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0   duration-200 opacity-25 shadow-lg'  />
-<div style={{left:`${offsetX+40}px`,backgroundColor:`${colors_array[colorIndex!-1]}`,transitionDuration:`${offsetX == 0 ? "0s":"500ms"}`,}}
-       className='  z-30 w-10  h-[60px] lg:h-[76px] my-auto  absolute top-0  rounded-r duration-200 opacity-25 shadow-lg'  /> */}
-
+ 
 
       <div className="z-40 relative hidden lg:flex items-center justify-between h-20 px-10">
-        <div className="flex items-center justify-normal gap-x-6 ">
+        <Link href={"/"} className="flex items-center justify-normal gap-x-6 ">
           <span>LOGO</span>
-          <h1 className="text-4xl font-rem font-bold">Botenics</h1>
-        </div>
+          <h1 className="text-4xl font-rem font-bold text-headingText">Botonetics</h1>
+        </Link>
         <nav>
-          <ul className="flex items-center justify-normal gap-x-5">
+          <ul className="flex items-center justify-normal gap-x-10 ">
             {navApi.map((item, i) => {
               return (
                 <li
-                  className="group 
+                  className=" group  hover:text-headingText duration-200
                            text-xl font-mono font-bold capitalize"
                   key={item.id}
                 >
-                  <Link href={item.link}>{item.title}</Link>
-
+                  <Link  className=' z-40 relative' href={item.link}>{item.title}
+                    <div className='absolute -top-[3px] w-[120%] h-[140%] -right-2 rounded group-hover:bg-neutral-700 -z-10 duration-200'/>
+                  </Link>
                   <div
-                    className=" max-h-0  max-w-full group-hover:max-h-80 group-hover:pt-10
+                    className=" max-h-0  max-w-full group-hover:max-h-80 group-hover:pt-10 
                     overflow-hidden    
-
+                     group-hover:border-2 group-hover:border-t-0  rounded border-dashed
                              absolute  top-20 left-0 right-0
-                             bg-slate-200/95 duration-[250ms]
+                             bg-bg duration-[250ms]
                              flex  flex-row items-start justify-between   
                              
                              "
@@ -180,23 +123,27 @@ const Navbar = () => {
         </nav>
       </div>
 
+
+
       {/* for mobile devies */}
       <div className="relative lg:hidden flex items-center justify-between h-full px-3 rounded-b-md  ">
-        <div className=" ">
-          <h1 className="text-4xl font-rem font-bold">Botenics</h1>
-        </div>
+        <Link href={"/"} className=" ">
+          <h1 className="text-4xl font-rem text-headingText font-bold">Botonetics</h1>
+        </Link>
 
         {/* icons  */}
         <div onClick={() => setNav(!nav)} className="text-2xl">
-          {nav ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
+          {nav ?
+          <span className='text-headingText'> <AiOutlineMenuFold /> </span>: 
+          <span ><AiOutlineMenuUnfold /></span>}
         </div>
 
         {/* nav side bar  */}
         <div
           className={`z-40 absolute top-16 left-0 
           ${
-            nav ? 'max-w-full' : 'max-w-0'
-          } w-[80%] md:w-[40%]  h-[80vh]   overflow-auto duration-300 bg-slate-200 
+            nav ? 'max-w-full border-b-2 border-r-2 border-white border-opacity-100 ' : 'max-w-0'
+          } w-[80%] md:w-[40%]  h-[80vh]   overflow-auto duration-300 bg-bg 
           rounded-br-lg `}
         >
           <div>
@@ -205,13 +152,13 @@ const Navbar = () => {
                 <li key={item.id} className="">
                   <div
                     className={`${
-                      subMenu == index ? ' bg-slate-400/50' : 'bg-slate-300'
-                    }  py-1 px-3 rounded-r border-l-4 border-darkPrimary  `}
+                      subMenu == index ? ' bg-neutral-900' : 'bg-neutral-800'
+                    }  py-1 px-3 rounded-r border-l-4   `}
                   >
                     <Link href={item.link} className="">
                       <div
                         className="flex items-center justify-between w-60 
-                       capitalize font-sans font-semibold tracking-wider
+                       capitalize font-sans font-semibold tracking-wider text-headingText
                         "
                       >
                         {item.title}
@@ -235,14 +182,14 @@ const Navbar = () => {
                   ${subMenu == index ? 'max-w-full' : 'max-w-0'} 
                     overflow-hidden 
                   flex flex-col items-start justify-normal gap-y-4    rounded-b-md duration-500
-                  bg-slate-300 border-l-4 border-primaryColor `}
+                  bg-neutral-800 border-l-4 border-white `}
                   >
                     {item.dropDown?.map((subItem, index) => {
                       return (
                         <li
                           className={` ${index == 0 ? 'pt-5' : 'pt-0'}
                       ${item.dropDown?.length - 1 == index ? 'pb-5' : 'pb-0'}
-                       capitalize  pl-4 text-lg font-semibold text-gray-600   `}
+                       capitalize  pl-4 text-lg font-semibold    `}
                           key={item.id}
                         >
                           <Link href={subItem.link}>{subItem.title}</Link>

@@ -84,8 +84,8 @@ const Hero = () => {
     <div
 
 
-      className="w-[90%]  text-normalText
-    flex items-center justify-normal mx-auto mt-20"
+      className="w-[90%]  text-normalText h-screen -mt-10
+    flex items-center justify-center mx-auto "
     >
         {/* square  */}
       {/* <div style={{
@@ -101,7 +101,7 @@ const Hero = () => {
         boxShadow:`${offsetX}px ${offsetY}px 50px -30px ${color}`
      }}
       
-      className="w-full h-[500px] 
+      className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950
        flex flex-col lg:flex-row items-start lg:items-center justify-evenly px-2 lg:px-20">
        
        
@@ -115,7 +115,7 @@ const Hero = () => {
             <h1 className="flex items-center text-3xl  lg:text-5xl  text-headingText font-semibold lg:tracking-wider">
               Botonetics
             <span className="text-3xl lg:text-5xl text-white font-bold px-4">-</span>
-            <h3 className='text-lg text-normalText font-semibold pt-1.5'>   Building Better</h3>
+            <h3 className='text-lg text-normalText font-semibold pt-1.5 flex-shrink-0'>   Building Better</h3>
             </h1>
 
             <h3 className="pt-5 text-lg text-normalText font-semibold">
