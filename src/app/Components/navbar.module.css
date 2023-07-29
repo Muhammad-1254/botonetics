@@ -1,0 +1,7 @@
+ @layer utilities {
+    /* Reduce the scrollbar size to zero for WebKit-based browsers */
+    #navbar::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  } 

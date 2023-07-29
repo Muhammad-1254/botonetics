@@ -20,7 +20,7 @@ const BlogsCard: FC<blogDataI> = ({
 }) => {
 
 
-    console.log("len :",description.length);
+    // console.log("len :",description.length);
     
   return (
     <Link href={blogLink}>

@@ -1,5 +1,5 @@
 'use client';
-
+import styles from './navbar.module.css';
 import React, { useEffect, useState } from 'react';
 import { navApi } from '../constantAPI/api';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import {
   AiOutlineDeploymentUnit,
   AiOutlineDown,
   AiOutlineLeft,
+  AiOutlineLinkedin,
   AiOutlineMenu,
   AiOutlineMenuFold,
   AiOutlineMenuUnfold,
@@ -16,208 +17,156 @@ import {
   AiOutlineUp,
 } from 'react-icons/ai';
 
+import logo from '../../../public/logo-black-svg.svg';
+
 const Navbar = () => {
-
-
-
- 
-
-
-
-
   // const [isHover, setHover] = useState(false);
   const [nav, setNav] = useState(false);
 
   // for mobile sub menu
-  const [subMenu, setSubMenu] = useState<null | number>(null);
+  const [subMenu, setSubMenu] = useState(false);
 
   // sub meanu handler if 2 times prees than equal to  null
-  const subMenuHandler = (index: number) => {
-    if (subMenu == index) {
-      setSubMenu(null);
-    } else {
-      setSubMenu(index);
-    }
-    return;
-  };
 
   return (
     <>
-    
-    <header
-      className="z-50 lg:w-full w-full h-16 lg:h-20   sticky top-0 
-    border-b border-white bg-black bg-opacity-40 text-normalText group/lgHoverborderNone
+      <header
+        className="z-50 lg:w-full w-full    sticky top-0 
+ bg-neutral-950/90  text-normalText 
+    overflow-hidden  md:py-3 lg:py-5
     "
-    >
+      >
+        <div className="relative  flex items-center justify-between h-full px-3 rounded-b-md  ">
+          {/* left side  */}
+          <Link
+            href={'/'}
+            className="flex items-center justify-normal gap-x-2 md:gap-x-10 group/logo"
+          >
+            <div className="w-16 h-16 md:w-20 md:h-20 md:group-hover/logo:scale-110 duration-200 ease-out">
+              <Image
+                className="w-full h-full object-cover object-center "
+                src={logo}
+                alt="logo"
+              />
+            </div>
+            <h1
+              className="text-4xl font-rem text-headingText font-bold
+         md:group-hover/logo:scale-105 duration-200 ease-out
+          "
+            >
+              Botonetics
+            </h1>
+          </Link>
+          {/* left side till here */}
 
- 
-
-      <div className="z-40 relative hidden lg:flex items-center justify-between h-20 px-10">
-        <Link href={"/"} className="flex items-center justify-normal gap-x-6 ">
-          <span>LOGO</span>
-          <h1 className="text-4xl font-rem font-bold text-headingText">Botonetics</h1>
-        </Link>
-        <nav>
-          <ul className="flex items-center justify-normal gap-x-10 ">
-            {navApi.map((item, i) => {
-              return (
-                <li
-                  className=" group  hover:text-headingText duration-200
-                           text-xl font-mono font-bold capitalize"
-                  key={item.id}
-                >
-                  <Link  className=' z-40 relative' href={item.link}>{item.title}
-                    <div className='absolute -top-[3px] w-[120%] h-[140%] -right-2 rounded group-hover:bg-neutral-700 -z-10 duration-200'/>
-                  </Link>
-                  <div
-                    className=" max-h-0  max-w-full group-hover:max-h-80 group-hover:pt-10 
-                    overflow-hidden    
-                     group-hover:border-2 group-hover:border-t-0  rounded border-dashed
-                             absolute  top-20 left-0 right-0
-                             bg-bg duration-[250ms]
-                             flex  flex-row items-start justify-between   
-                             
-                             "
-                  >
-                    {/* Image and title  */}
-                    <div className="relative w-[60%] pb-10 ">
-                      <Image
-                        width={400}
-                        height={280}
-                        className=" w-[75%] h-40 mx-auto object-cover object-center
-                        rounded  "
-                        src={item.featuredImage}
-                        alt="featuredImage"
-                      />
-
-                      <div className="z-40 absolute  pb-10 bottom-0 left-[20%]  right-[20%] text-red-500  ">
-                        <h3 className="text-base font-rem mb-4">
-                          {item.featuredImageTitle}
-                        </h3>
-                      </div>
-                    </div>
-
-                    {/* sub nav links  */}
-                    <div className="w-[40%] ">
-                      <ul className="flex flex-wrap items-center  mr-4 gap-4">
-                        {item.dropDown.map((subItem) => (
-                          <li
-                            className="bg-slate-300/50 hover:bg-slate-300/90 duration-200 rounded "
-                            key={subItem.id}
-                          >
-                            <Link
-                              className=" px-3 py-0.5 font-sans font-medium text-lg"
-                              href={subItem.link}
-                            >
-                              {subItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
-
-
-
-      {/* for mobile devies */}
-      <div className="relative lg:hidden flex items-center justify-between h-full px-3 rounded-b-md  ">
-        <Link href={"/"} className=" ">
-          <h1 className="text-4xl font-rem text-headingText font-bold">Botonetics</h1>
-        </Link>
-
-        {/* icons  */}
-        <div onClick={() => setNav(!nav)} className="text-2xl">
-          {nav ?
-          <span className='text-headingText'> <AiOutlineMenuFold /> </span>: 
-          <span ><AiOutlineMenuUnfold /></span>}
-        </div>
-
-        {/* nav side bar  */}
-        <div
-          className={`z-40 absolute top-16 left-0 
-          ${
-            nav ? 'max-w-full border-b-2 border-r-2 border-white border-opacity-100 ' : 'max-w-0'
-          } w-[80%] md:w-[40%]  h-[80vh]   overflow-auto duration-300 bg-bg 
-          rounded-br-lg `}
-        >
-          <div>
-            <ul className="flex flex-col items-start justify-start mt-10 mx-2 gap-y-5 ">
-              {navApi.map((item, index) => (
-                <li key={item.id} className="">
-                  <div
-                    className={`${
-                      subMenu == index ? ' bg-neutral-900' : 'bg-neutral-800'
-                    }  py-1 px-3 rounded-r border-l-4   `}
-                  >
-                    <Link href={item.link} className="">
-                      <div
-                        className="flex items-center justify-between w-60 
-                       capitalize font-sans font-semibold tracking-wider text-headingText
-                        "
-                      >
-                        {item.title}
-                        <span
-                          className={``}
-                          onClick={() => subMenuHandler(index)}
-                        >
-                          {subMenu == index ? (
-                            <AiOutlineUp />
-                          ) : (
-                            <AiOutlineDown />
-                          )}
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-
-                  {/* sub container  */}
-                  <ul
-                    className={`${subMenu == index ? 'max-h-full' : 'max-h-0'}
-                  ${subMenu == index ? 'max-w-full' : 'max-w-0'} 
-                    overflow-hidden 
-                  flex flex-col items-start justify-normal gap-y-4    rounded-b-md duration-500
-                  bg-neutral-800 border-l-4 border-white `}
-                  >
-                    {item.dropDown?.map((subItem, index) => {
-                      return (
-                        <li
-                          className={` ${index == 0 ? 'pt-5' : 'pt-0'}
-                      ${item.dropDown?.length - 1 == index ? 'pb-5' : 'pb-0'}
-                       capitalize  pl-4 text-lg font-semibold    `}
-                          key={item.id}
-                        >
-                          <Link href={subItem.link}>{subItem.title}</Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+          {/* icons  */}
+          <div
+            onClick={() => setNav(!nav)}
+            className=" cursor-pointer hover:text-headingText duration-200 ease-linear 
+           pr-2 md:pr-5 lg:pr-20 text-2xl md:text-3xl lg:text-5xl"
+          >
+            {nav ? (
+              <span className="text-headingText">
+                {' '}
+                <AiOutlineMenuFold />{' '}
+              </span>
+            ) : (
+              <span>
+                <AiOutlineMenuUnfold />
+              </span>
+            )}
           </div>
         </div>
-        {/* navbar side bar  tiil here*/}
+      </header>
 
-        {/* side bar neibour if cliack than side bar off  */}
+      {/* nav bar items  */}
 
-        <div
-          onClick={() => setNav(!nav)}
-          className={`absolute top-0 right-0
-         ${nav ? 'w-screen' : 'w-0'}  h-screen bg-transparent z-20`}
-        />
+      <div
+        id=""
+        className={` absolute top-0 right-0 left-0  w-full h-screen duration-300 ease-out 
+    bg-black text-headingText z-30 
+   ${nav ? 'max-w-full max-h-screen scale-100' : 'scale-50 max-h-0'} 
+    `}
+      >
+        <ul
+          className=" flex flex-col items-center justify-center gap-y-14  
+      w-full h-full
+      "
+        >
+          {navApi?.map(({ id, link, Icon, dropDown, title }) => {
+            return (
+              <li
+                className={`${dropDown && 'flex items-center gap-x-2'}
+          group/nav overflow-hidden 
+          text-xl md:text-2xl lg:text-4xl font-semibold tracking-widest`}
+                key={id}
+              >
+                {Icon ? (
+                  <Link
+                    className="flex items-end justify-center gap-x-4
+               hover:text-blue-500 duration-200  "
+                    href={link}
+                  >
+                    <AiOutlineLinkedin size={50} />
+                    <span>Linkedin</span>
+                  </Link>
+                ) : (
+                  <>
+                    <Link
+                      onClick={() => setSubMenu(!subMenu)}
+                      className={`overflow-hidden`}
+                      href={link}
+                    >
+                      {title}
+                    </Link>
+                    <span
+                      className=" md:group-hover/nav:rotate-90 duration-200 ease-linear
+            "
+                    >
+                      {dropDown && <AiOutlineRight />}
+                    </span>
+                  </>
+                )}
+
+                {/* sub nav items  */}
+                {dropDown && (
+                  <div
+                    className={` z-40 bg-neutral-800 overflow-hidden
+max-w-[80%]  left-[10%] right-[10%]   max-h-0 w-full
+flex flex-col items-center  justify-center gap-y-10
+${subMenu ? 'max-w-[80%] max-h-full  ' : ''}
+
+      md:group-hover/nav:max-w-[50%]  lg:group-hover/nav:max-w-[40%]
+      md:group-hover/nav:max-h-[50%] 
+      md:max-w-[50%]
+      lg:max-w-[40%]
+      md:h-full h-[65%]
+      absolute bottom-0 md:left-[25%] md:right-[25%] lg:left-[30%] lg:right-[30%]
+       duration-200 ease-linear rounded-t-lg
+       `}
+                  >
+                    {dropDown.map(({ id, link, title }) => (
+                      <div key={id}>
+                        <Link href={link}>{title}</Link>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* this is for mobile devie of sub menu if clicked outer part of sub meanu than sub menu closes */}
+        {subMenu && (
+          <div
+            onClick={() => setSubMenu(!subMenu)}
+            className="z-20 absolute top-0 w-full h-screen bg-transparent"
+          />
+        )}
       </div>
-    </header>
-
-  
-
-
-    </>  );
+    </>
+  );
 };
 
 export default Navbar;
