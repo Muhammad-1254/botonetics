@@ -18,15 +18,10 @@ import {motion,useScroll} from 'framer-motion'
 import logo from '../../../public/logo-black-svg.svg';
 
 const Navbar = () => {
-let n = 0
-window.addEventListener('mouseover',(e)=>{
-  // n = n+ parseInt(e.target)
-  
-})
 
 // progress bar 
 const {scrollYProgress} =useScroll()
-// console.log("scrollYProgress:, ",scrollYProgress);
+
 
   // const [isHover, setHover] = useState(false);
   const [nav, setNav] = useState(false);
@@ -43,7 +38,7 @@ const {scrollYProgress} =useScroll()
 
   return (
     <> 
-    {/* <motion.div className='z-50 w-full h-1 bg-red-500 sticky  top-0' style={{scaleX:scrollYProgress}}/> */}
+    <motion.div className=' w-full h-1 z-[9999] bg-white sticky  top-0' style={{scaleX:scrollYProgress}}/>
 
     
       <motion.header 
