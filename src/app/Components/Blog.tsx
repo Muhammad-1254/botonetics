@@ -9,7 +9,9 @@ import BlogsCard from './sub-components/BlogsCard'
 
 const Blog = () => {
   return (
-    <div className='flex flex-col items-center justify-evenly gap-y-10
+
+    <div id='Blog'
+     className='flex flex-col items-center justify-evenly gap-y-10
     w-full mx-auto text-normalText mt-20 mb-20'>
         {/* heading  */}
         <h1 className='text-headingText text-xl md:text-2xl lg:text-4xl font-semibold '>

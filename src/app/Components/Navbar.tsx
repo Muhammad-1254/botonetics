@@ -5,21 +5,29 @@ import { navApi } from '../constantAPI/api';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  AiOutlineArrowRight,
-  AiOutlineDeploymentUnit,
-  AiOutlineDown,
-  AiOutlineLeft,
+  
   AiOutlineLinkedin,
-  AiOutlineMenu,
+
   AiOutlineMenuFold,
   AiOutlineMenuUnfold,
   AiOutlineRight,
-  AiOutlineUp,
+
 } from 'react-icons/ai';
+import {motion,useScroll} from 'framer-motion'
 
 import logo from '../../../public/logo-black-svg.svg';
 
 const Navbar = () => {
+let n = 0
+window.addEventListener('mouseover',(e)=>{
+  // n = n+ parseInt(e.target)
+  
+})
+
+// progress bar 
+const {scrollYProgress} =useScroll()
+// console.log("scrollYProgress:, ",scrollYProgress);
+
   // const [isHover, setHover] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -28,16 +36,25 @@ const Navbar = () => {
 
   // sub meanu handler if 2 times prees than equal to  null
 
+
+    console.log("scrollYProgress:, ",scrollYProgress.get());
+
+    
+
   return (
-    <>
-      <header
-        className="z-50 lg:w-full w-full    sticky top-0 
+    <> 
+    {/* <motion.div className='z-50 w-full h-1 bg-red-500 sticky  top-0' style={{scaleX:scrollYProgress}}/> */}
+
+    
+      <motion.header 
+        className="z-[100] lg:w-full w-full    sticky top-0 
  bg-neutral-950/90  text-normalText 
     overflow-hidden  md:py-3 lg:py-5
     "
       >
+    
         <div className="relative  flex items-center justify-between h-full px-3 rounded-b-md  ">
-          {/* left side  */}
+          {/* left side  logo and name*/}
           <Link
             href={'/'}
             className="flex items-center justify-normal gap-x-2 md:gap-x-10 group/logo"
@@ -59,7 +76,7 @@ const Navbar = () => {
           </Link>
           {/* left side till here */}
 
-          {/* icons  */}
+          {/* nav icon  */}
           <div
             onClick={() => setNav(!nav)}
             className=" cursor-pointer hover:text-headingText duration-200 ease-linear 
@@ -77,13 +94,14 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </header>
+      </motion.header>
+
+
 
       {/* nav bar items  */}
-
       <div
         id=""
-        className={` absolute top-0 right-0 left-0  w-full h-screen duration-300 ease-out 
+        className={`navbar absolute top-0 right-0 left-0  w-full h-screen duration-300 ease-out 
     bg-black text-headingText z-30 
    ${nav ? 'max-w-full max-h-screen scale-100' : 'scale-50 max-h-0'} 
     `}
@@ -93,7 +111,8 @@ const Navbar = () => {
       w-full h-full
       "
         >
-          {navApi?.map(({ id, link, Icon, dropDown, title }) => {
+          {navApi?.map(({ id, link , Icon, dropDown, title }) => {
+
             return (
               <li
                 className={`${dropDown && 'flex items-center gap-x-2'}
@@ -105,7 +124,9 @@ const Navbar = () => {
                   <Link
                     className="flex items-end justify-center gap-x-4
                hover:text-blue-500 duration-200  "
-                    href={link}
+                    href={link} 
+                    target='_blank'
+                    onClick={()=>setNav(!nav)}
                   >
                     <AiOutlineLinkedin size={50} />
                     <span>Linkedin</span>
@@ -113,7 +134,7 @@ const Navbar = () => {
                 ) : (
                   <>
                     <Link
-                      onClick={() => setSubMenu(!subMenu)}
+                      onClick={() => {dropDown ? setSubMenu(!subMenu) :setNav(!nav)}}
                       className={`overflow-hidden`}
                       href={link}
                     >
@@ -129,7 +150,7 @@ const Navbar = () => {
                 )}
 
                 {/* sub nav items  */}
-                {dropDown && (
+                {dropDown ? (
                   <div
                     className={` z-40 bg-neutral-800 overflow-hidden
 max-w-[80%]  left-[10%] right-[10%]   max-h-0 w-full
@@ -147,11 +168,14 @@ ${subMenu ? 'max-w-[80%] max-h-full  ' : ''}
                   >
                     {dropDown.map(({ id, link, title }) => (
                       <div key={id}>
-                        <Link href={link}>{title}</Link>
+                        <Link
+                        onClick={()=>setNav(!nav)}
+                        
+                        href={link}>{title}</Link>
                       </div>
                     ))}
                   </div>
-                )}
+                ) :null}
               </li>
             );
           })}

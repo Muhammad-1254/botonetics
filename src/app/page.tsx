@@ -1,22 +1,31 @@
 'use client';
 
-import styles from '@/app/Components/navbar.module.css'
 import Featured from './Components/Featured';
 import Hero from './Components/Hero';
-import Navbar from './Components/Navbar';
 import Services from './Components/Services';
-import bgIMG from '../../public/img3.png';
-import Image from 'next/image';
 import WhyChooseUs from './Components/WhyChooseUs';
 import ContactUs from './Components/ContactUs';
 import Blog from './Components/Blog';
+import Head from 'next/head';
+import SocialLinks from './Components/SocialLinks';
 import Footer from './Components/Footer';
+
 export default function Home() {
+
+
   return (
-    <main id=''>
+    
+    <>
+   
+    <main className=''>
+
+
+
       <div className="max-w-[400px] md:max-w-[800px] lg:max-w-[1600px] mx-auto">
-        <Hero />
-        <Services />
+        <Hero /> 
+        {/* id='Home' */}
+        <Services /> 
+        {/* id='Services' */}
       </div>
 
       <div
@@ -25,10 +34,12 @@ export default function Home() {
          backdrop-blur-3xl bg-opacity-80"
       >
         <Featured />
+        {/* id='Featured' */}
       </div>
 
       <div className="max-w-[400px] md:max-w-[800px] lg:max-w-[1600px] mx-auto">
         <Blog />
+        {/* id='Blog' */}
       </div>
 
       <div
@@ -36,11 +47,25 @@ export default function Home() {
         "
       >
         <WhyChooseUs />
+        {/* id='WhyChooseUs' */}
       </div>
 
       <div className="max-w-[400px] md:max-w-[800px] lg:max-w-[1600px] mx-auto">
         <ContactUs />
+        {/* id='ContactUs' */}
+      </div>
+    <SocialLinks/>
+    <div
+       className="-z-10 relative h-[600px] md:h-[550px] lg:h-[450px] mx-auto mt-20 
+       bg-cover   bg-center bg-no-repeat bg-[url(../../public/blog.jpg)] 
+       backdrop-blur-3xl bg-opacity-80 
+       "
+      >
+        <Footer/>
       </div>
     </main>
+    
+    </>
+
   );
 }

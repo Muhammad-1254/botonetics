@@ -1,13 +1,16 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import logo from '../../../public/temp.svg';
+import logo from '../../../public/logo-white.png';
 import { shapes } from '../constantAPI/shadowCirlce';
 // import { colorPalleteWise as colors_array,  } from '../constantAPI/colors';
 // import { randowColors as colors_array,  } from '../constantAPI/colors';
 import { colors_array } from '../constantAPI/colors';
 
 const Hero = () => {
+
+
+
   let min = -50;
   let max = 50;
 
@@ -17,6 +20,7 @@ const Hero = () => {
   const [colorIndex, setColorIndex] = useState(0);
   const [incX, setIncX] = useState(false);
   const [incY, setIncY] = useState(false);
+  // console.log("Hero section  called");
 
   // for x and y direction indicators
 
@@ -64,10 +68,12 @@ const Hero = () => {
   // console.log( "Y:",offsetY);
 
   return (
-    <div
+
+    <div id='Home'
       className="w-[90%]  text-normalText h-screen -mt-10
     flex items-center justify-center mx-auto "
     >
+      
       {/* <div className='w-'/> */}
       <div
         style={{
@@ -90,13 +96,13 @@ const Hero = () => {
               <span className="text-3xl lg:text-5xl text-white font-bold px-4">
                 -
               </span>
-              <h3 className="text-lg text-normalText font-semibold pt-1.5 flex-shrink-0">
+              <h3 className="text-base text-normalText font-semibold pt-1.5 flex-shrink-0">
                 {' '}
                 Building Better
               </h3>
             </h1>
 
-            <h3 className="pt-5 text-lg text-normalText font-semibold">
+            <h3 className="pt-5 text-base text-normalText font-semibold">
               Business Byte by Byte.
             </h3>
           </div>

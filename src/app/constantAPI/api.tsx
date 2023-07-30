@@ -2,6 +2,10 @@ import navFeaturedImg from '../../../public/img1.jpg';
 import navFeatured from '../../../public/img2.png';
 import bloImg from '../../../public/blog.jpg'
 import {AiOutlineLinkedin} from 'react-icons/ai'
+import SocialLinks from '../Components/SocialLinks';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { HiOutlineMail } from 'react-icons/hi';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const navApi = [
  
@@ -15,7 +19,7 @@ export const navApi = [
   {
     id: 1,
     title:"why botonetics",
-    link: '',
+    link: '#WhyChooseUs',
     Icon:null,
     dropDown:null,
   },
@@ -23,14 +27,14 @@ export const navApi = [
   {
     id: 3,
     title: "Services",
-    link: '',
+    link: '#Services',
     Icon:null,
     dropDown: null
   },
   {
     id: 4,
     title: "Contact Us",
-    link: '',
+    link: '#ContactUs',
     Icon:null,
     dropDown: null
   },
@@ -55,7 +59,7 @@ export const navApi = [
       {
         id:2,
         title:'Blogs',
-        link:'',
+        link:'#Blog',
 
       },
       
@@ -226,3 +230,52 @@ export const blogAPi ={
 
   ]
 } 
+
+
+
+// SocialLinks
+
+export const socialLinks = [
+  {
+    id: 1,
+    child: (
+      <>
+        Linkedin <FaLinkedin size={30} />
+      </>
+    ),
+    href: '',
+    style: 'rounded-tr-md',
+  },
+
+  {
+    id: 2,
+    child: (
+      <>
+        Github <FaGithub size={30} />
+      </>
+    ),
+    href: '',
+  },
+  {
+    id: 3,
+    child: (
+      <>
+        Mail
+        <HiOutlineMail size={30} />
+      </>
+    ),
+    href: '',
+  },
+  {
+    id: 4,
+    child: (
+      <>
+        Resume
+        <BsFillPersonLinesFill size={30} />
+      </>
+    ),
+    href: '',
+    style: 'rounded-br-md',
+    download: true,
+  },
+];

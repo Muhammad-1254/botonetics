@@ -6,15 +6,18 @@ import { servicesCard } from '../constantAPI/api'
 const Services = () => {
   return (
 
-    <div>
+    <div id='Services' 
+     className='w-[90%] flex flex-col items-start overflow-x-hidden justify-start  md:gap-y-10 mx-auto
+    text-normalText'>
 {/* text  */}
-        <div>
-
+        <div className='  text-center mx-auto
+        text-headingText   text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wider '>
+Services
         </div>
 
         {/* cards */}
     <div 
-    className='flex flex-wrap items-start justify-normal mx-auto gap-10'
+    className='flex flex-wrap items-start justify-normal mx-auto gap-5'
     
     >
 {

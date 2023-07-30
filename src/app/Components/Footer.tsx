@@ -12,7 +12,7 @@ const Footer = () => {
     >
       {/* upper image portions  */}
       <div
-        className="flex flex-col items-start justify-evenly  h-full w-full pl-24 
+        className="flex flex-col items-start justify-evenly  h-full w-full pl-8 md:pl-24 
             text-headingText tracking-wider"
       >
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold -mb-24">
@@ -38,7 +38,7 @@ const Footer = () => {
 
       {/* bottom part */}
       <div
-        className="flex items-center justify-end pr-24 py-4
+        className="flex items-center justify-center md:justify-end   md:pr-24 py-4
         border-b-2
         "
       >

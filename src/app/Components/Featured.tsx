@@ -3,7 +3,8 @@ import React from 'react';
 import featuredSVG from '../../../public/featuredSVG.svg';
 const Featured = () => {
   return (
-    <div className="max-w-[400px] h-full md:max-w-[800px] lg:max-w-[1600px] xl-max-w-[2300px] mx-auto gap-y-5 lg:gap-y-0  lg:px-10
+    <div id='Featured'
+     className="max-w-[400px] h-full md:max-w-[800px] lg:max-w-[1600px] xl-max-w-[2300px] mx-auto gap-y-5 lg:gap-y-0  lg:px-10
     flex flex-wrap flex-col lg:flex-row  items-center justify-evenly   lg:justify-between 
     text-headingText overflow-hidden ">
 
