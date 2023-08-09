@@ -27,39 +27,31 @@ const Hero = () => {
 // scaling while scrolling 
 
 let scroll = 0
-let zoomSpeed = 0.00125
+let zoomSpeed = 0.000375
 let maxZoom = 1 
 let minZoom = 0.75
 const [zoom, setZoom] = useState(1-zoomSpeed)
 const [lastScroll, setLastScroll] = useState(0)
+
+
 if(typeof window !== 'undefined'){
 
 
 window.addEventListener('scroll',()=>{
  scroll = window.scrollY
 
-
-  if(zoom < maxZoom && zoom > minZoom){
-  // if(scroll <100){
-  //   setZoom(1)
-  //   setLastScroll(scroll)
-    
-  // }else
-   if(scroll > lastScroll){
+  if(zoom > minZoom && scroll > lastScroll){
     setZoom(zoom - zoomSpeed)
     setLastScroll(scroll)
-  }else if(scroll < lastScroll){
+
+  }else{
     setZoom(zoom + zoomSpeed)
     setLastScroll(scroll)
-  }
 
- }
+  }})}
 
-    
 
-})
-}
-  
+
  
   return (
     <div
@@ -67,7 +59,7 @@ window.addEventListener('scroll',()=>{
 style={{scale:zoom,}}
       className={`
        w-[90%] h-full fixed top-[10%] left-[5%]   text-normalText  -mt-10
-    flex items-center justify-center mx-auto `}
+    flex items-center justify-center mx-auto dark: `}
     >
       {/* <div className='w-'/> */}
       <div
