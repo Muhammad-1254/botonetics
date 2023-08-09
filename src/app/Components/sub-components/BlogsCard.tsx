@@ -44,7 +44,7 @@ const BlogsCard: FC<blogDataI> = ({
         />
       </div>
 
-      <div className='-z-10  flex flex-col items-start justify-evenly 
+      <div className='-z-10 bg-bg flex flex-col items-start justify-evenly 
        w-[60%] md:w-[65%] h-full  pl-5 -ml-2
       rounded-lg md:group-hover:border border-l-0 border-normalText md:duration-200 md:ease-linear
       border md:border-0 overflow-hidden

@@ -37,17 +37,30 @@ const Footer = () => {
       {/* upper image portions till here  */}
 
       {/* bottom part */}
+
       <div
         className="flex items-center justify-center md:justify-end   md:pr-24 py-4
         border-b-2
         "
       >
+
+    
+
+   
+        <div className=' flex items-center justify-center py-4  md:justify-end md:pr-24'>
+
         <p className="text-xs md:text-base ">© 2023 Creative Chaos.&nbsp;</p>
         <strong className="text-headingText tracking-widest">
           Privacy Policy
         </strong>
+
+      
       </div>
+ 
+
     </div>
+    </div>
+
   );
 };
 

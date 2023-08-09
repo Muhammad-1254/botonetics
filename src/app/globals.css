@@ -13,17 +13,19 @@
  }
  body{
     background-color: black;
+    overflow-x: hidden;
  }
 
 
  body::-webkit-scrollbar{
-  width: 16px;
+  /* width: 16px;
   background: black;
-  border : 2px solid rgb(50 50 50);
+  border : 2px solid rgb(50 50 50); */
+  /* display: none; */
   
 }
 
-body::-webkit-scrollbar-thumb {
+/* body::-webkit-scrollbar-thumb {
   background: black;
     border-radius:6px;
     border: 1px solid white;
@@ -39,7 +41,7 @@ body::-webkit-scrollbar-thumb:hover {
 } 
 body::-webkit-scrollbar-track{
   height: 50px;
-}
+} */
 
 
  /* window appear stopping bg  */
@@ -61,3 +63,30 @@ body::-webkit-scrollbar-track{
    
  }
 
+<<<<<<< Updated upstream
+=======
+
+ .startOn{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font: normal 16px "Gotham SSm", sans-serif !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /* box-sizing: border-box; */
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow-y:hidden ;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  
+  
+ }
+
+ .startOff{
+  
+ }
+
+>>>>>>> Stashed changes
