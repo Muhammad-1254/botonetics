@@ -1,85 +1,48 @@
 'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import logo from '../../../public/logo-white.png';
-import { shapes } from '../constantAPI/shadowCirlce';
-// import { colorPalleteWise as colors_array,  } from '../constantAPI/colors';
-// import { randowColors as colors_array,  } from '../constantAPI/colors';
-import { colors_array } from '../constantAPI/colors';
+
+import React, { useEffect, useState } from 'react';
+import { useScroll } from 'framer-motion';
 
 const Hero = () => {
 
+// media query for logo 
+  let WindowWidth = 0;
+  let logoSize = 0;
+  if (typeof window !== 'undefined') {
+    WindowWidth = window.innerWidth;
+  }
+  if (WindowWidth >= 1600) {
+    logoSize = 800;
+  } else if (WindowWidth >= 1200) {
+    logoSize = 500;
+  } else if (WindowWidth >= 650) {
+    logoSize = 360;
+  } else if (WindowWidth >= 340) {
+    logoSize = 300;
+  }
 
+// media query for logo  till here
 
-  let min = -50;
-  let max = 50;
-
-  const [offsetX, setOffsetX] = useState<number>(shapes.square.x);
-  const [offsetY, setOffsetY] = useState<number>(shapes.square.y);
-  const [color, setColor] = useState(colors_array[0]);
-  const [colorIndex, setColorIndex] = useState(0);
-  const [incX, setIncX] = useState(false);
-  const [incY, setIncY] = useState(false);
-  // console.log("Hero section  called");
-
-  // for x and y direction indicators
-
-  setTimeout(() => {
-    if (colorIndex < colors_array.length) {
-      setColor(colors_array[colorIndex]);
-
-      setColorIndex(colorIndex + 1);
-    } else {
-      setColorIndex(0);
-      setColor(colors_array[colorIndex]);
-    }
-    // console.log(color);
-  }, 250);
-
-  setTimeout(() => {
-    if (incX) {
-      if (offsetX < max) {
-        setOffsetX(offsetX + 1);
-      } else {
-        setOffsetX(offsetX - 1);
-        setIncX(!incX);
-      }
-    } else if (offsetX > min) {
-      setOffsetX(offsetX - 1);
-    } else {
-      setOffsetX(offsetX + 1);
-      setIncX(!incX);
-    }
-    if (incY) {
-      if (offsetY < max) {
-        setOffsetY(offsetY + 1);
-      } else {
-        setOffsetY(offsetY - 1);
-        setIncY(!incY);
-      }
-    } else if (offsetY > min) {
-      setOffsetY(offsetY - 1);
-    } else {
-      setOffsetY(offsetY + 1);
-      setIncY(!incY);
-    }
-  }, 100);
-  // console.log( "X:",offsetX);
-  // console.log( "Y:",offsetY);
-
+  
+  
+ 
   return (
-
-    <div id='Home'
-      className="w-[90%]  text-normalText h-screen -mt-10
+    <div
+      id="Home"
+      style={{}}
+      className=" w-[90%] text-normalText h-screen -mt-10
     flex items-center justify-center mx-auto "
     >
-      
       {/* <div className='w-'/> */}
       <div
+<<<<<<< Updated upstream
         style={{
           boxShadow: `${offsetX}px ${offsetY}px 50px -30px ${color}`,
         }}
         className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950
+=======
+        className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950 
+>>>>>>> Stashed changes
        flex flex-col lg:flex-row items-start lg:items-center justify-evenly px-2 lg:px-20"
       >
         {/* text content  */}
@@ -88,7 +51,7 @@ const Hero = () => {
         flex flex-col items-start  gap-y-5  mx-auto"
         >
           {/* baar  */}
-          <div className="w-20 h-1 bg-secondaryColor " />
+          <div className="w-20 h-1 bg-secondaryColor bg-neutral-800 " />
 
           <div className="pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
             <h1 className="flex items-center text-3xl  lg:text-5xl  text-headingText font-semibold lg:tracking-wider">
@@ -109,6 +72,7 @@ const Hero = () => {
         </div>
 
         {/* logo  or image*/}
+<<<<<<< Updated upstream
         <div className="mx-auto w-[200px] md:w-[300px] lg:w-[500px] ">
           <Image
             className=" w-full object-cover object-center"
@@ -116,6 +80,11 @@ const Hero = () => {
             alt=""
           />
         </div>
+=======
+        {/* <div className=" ">
+          <LogoAnimation size={logoSize} />
+        </div> */}
+>>>>>>> Stashed changes
       </div>
     </div>
   );

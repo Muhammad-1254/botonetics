@@ -1,9 +1,8 @@
 'use client';
-import styles from './navbar.module.css';
-import React, { useEffect, useState } from 'react';
+
+import React, {  useState } from 'react';
 import { navApi } from '../constantAPI/api';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   
   AiOutlineLinkedin,
@@ -15,7 +14,8 @@ import {
 } from 'react-icons/ai';
 import {motion,useScroll} from 'framer-motion'
 
-import logo from '../../../public/logo-black-svg.svg';
+
+import LogoAnimation from './sub-components/LogoAnimation';
 
 const Navbar = () => {
 
@@ -32,7 +32,7 @@ const {scrollYProgress} =useScroll()
   // sub meanu handler if 2 times prees than equal to  null
 
 
-    console.log("scrollYProgress:, ",scrollYProgress.get());
+    // console.log("scrollYProgress:, ",scrollYProgress.get());
 
     
 
@@ -42,7 +42,7 @@ const {scrollYProgress} =useScroll()
 
     
       <motion.header 
-        className="z-[100] lg:w-full w-full    sticky top-0 
+        className="z-[100] w-full    sticky top-0 
  bg-neutral-950/90  text-normalText 
     overflow-hidden  md:py-3 lg:py-5
     "
@@ -54,16 +54,13 @@ const {scrollYProgress} =useScroll()
             href={'/'}
             className="flex items-center justify-normal gap-x-2 md:gap-x-10 group/logo"
           >
-            <div className="w-16 h-16 md:w-20 md:h-20 md:group-hover/logo:scale-110 duration-200 ease-out">
-              <Image
-                className="w-full h-full object-cover object-center "
-                src={logo}
-                alt="logo"
-              />
+            <div className=" w-[10%] md:w-[30%] flex items-center justify-center -mt-5 mb-5  md:ml-5 lg:ml-10  py-8 md:group-hover/logo:scale-110 duration-200 ease-out">
+            
+              <LogoAnimation size={120}/>
             </div>
             <h1
               className="text-4xl font-rem text-headingText font-bold
-         md:group-hover/logo:scale-105 duration-200 ease-out
+         md:group-hover/logo:scale-105 duration-200 ease-out  mx-auto
           "
             >
               Botonetics
