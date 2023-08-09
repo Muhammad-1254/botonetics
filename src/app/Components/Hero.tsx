@@ -35,14 +35,7 @@ const Hero = () => {
     >
       {/* <div className='w-'/> */}
       <div
-<<<<<<< Updated upstream
-        style={{
-          boxShadow: `${offsetX}px ${offsetY}px 50px -30px ${color}`,
-        }}
-        className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950
-=======
         className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950 
->>>>>>> Stashed changes
        flex flex-col lg:flex-row items-start lg:items-center justify-evenly px-2 lg:px-20"
       >
         {/* text content  */}
@@ -72,19 +65,9 @@ const Hero = () => {
         </div>
 
         {/* logo  or image*/}
-<<<<<<< Updated upstream
-        <div className="mx-auto w-[200px] md:w-[300px] lg:w-[500px] ">
-          <Image
-            className=" w-full object-cover object-center"
-            src={logo}
-            alt=""
-          />
-        </div>
-=======
         {/* <div className=" ">
           <LogoAnimation size={logoSize} />
         </div> */}
->>>>>>> Stashed changes
       </div>
     </div>
   );

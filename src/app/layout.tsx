@@ -1,15 +1,8 @@
 import './globals.css';
 
-<<<<<<< Updated upstream
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
-=======
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from './Components/Navbar';
->>>>>>> Stashed changes
 
 import Start from './Components/Start';
 
@@ -29,13 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-<<<<<<< Updated upstream
-        
-        <Navbar/>
-=======
 
         <Navbar />
->>>>>>> Stashed changes
         {children}
       </body>
     </html>
