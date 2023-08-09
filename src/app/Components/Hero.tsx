@@ -26,29 +26,29 @@ const Hero = () => {
 
 // scaling while scrolling 
 
-let scroll = 0
-let zoomSpeed = 0.000375
-let maxZoom = 1 
-let minZoom = 0.75
-const [zoom, setZoom] = useState(1-zoomSpeed)
-const [lastScroll, setLastScroll] = useState(0)
+// let scroll = 0
+// let zoomSpeed = 0.000375
+// let maxZoom = 1 
+// let minZoom = 0.75
+// const [zoom, setZoom] = useState(1-zoomSpeed)
+// const [lastScroll, setLastScroll] = useState(0)
 
 
-if(typeof window !== 'undefined'){
+// if(typeof window !== 'undefined'){
 
 
-window.addEventListener('scroll',()=>{
- scroll = window.scrollY
+// window.addEventListener('scroll',()=>{
+//  scroll = window.scrollY
 
-  if(zoom > minZoom && scroll > lastScroll){
-    setZoom(zoom - zoomSpeed)
-    setLastScroll(scroll)
+//   if(zoom > minZoom && scroll > lastScroll){
+//     setZoom(zoom - zoomSpeed)
+//     setLastScroll(scroll)
 
-  }else{
-    setZoom(zoom + zoomSpeed)
-    setLastScroll(scroll)
+//   }else{
+//     setZoom(zoom + zoomSpeed)
+//     setLastScroll(scroll)
 
-  }})}
+//   }})}
 
 
 
@@ -56,7 +56,7 @@ window.addEventListener('scroll',()=>{
   return (
     <div
       id="Home"
-style={{scale:zoom,}}
+// style={{scale:zoom,}}
       className={`
        w-[90%] h-full fixed top-[10%] left-[5%]   text-normalText  -mt-10
     flex items-center justify-center mx-auto dark: `}
@@ -75,9 +75,9 @@ style={{scale:zoom,}}
           <div className="w-20 h-1 bg-secondaryColor bg-neutral-800 " />
 
           <div className="pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
-            <h1 className="flex items-center text-3xl  lg:text-5xl  text-headingText font-semibold lg:tracking-wider">
+            <h1 className="flex items-center text-3xl font-semibold lg:text-5xl text-headingText lg:tracking-wider">
               Botonetics
-              <span className="text-3xl lg:text-5xl text-white font-bold px-4">
+              <span className="px-4 text-3xl font-bold text-white lg:text-5xl">
                 -
               </span>
               <h3 className="text-base text-normalText font-semibold pt-1.5 flex-shrink-0">
@@ -86,14 +86,14 @@ style={{scale:zoom,}}
               </h3>
             </h1>
 
-            <h3 className="pt-5 text-base text-normalText font-semibold">
+            <h3 className="pt-5 text-base font-semibold text-normalText">
               Business Byte by Byte.
             </h3>
           </div>
         </div>
 
         {/* logo  or image*/}
-        {/* <div className=" ">
+        {/* <div className="">
           <LogoAnimation size={logoSize} />
         </div> */}
       </div>
