@@ -24,7 +24,7 @@ export default function Home() {
         <Start/>
         </div>
 
-    <div className='-z-50 sticky top-0 left-0'>
+    <div className='-z-50 w-screen h-screen sticky top-0 bottom-0 right-0 left-0'>
         <Hero /> 
 
     </div>

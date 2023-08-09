@@ -23,19 +23,55 @@ const Hero = () => {
 
 // media query for logo  till here
 
-  
+
+// scaling while scrolling 
+
+let scroll = 0
+let zoomSpeed = 0.00125
+let maxZoom = 1 
+let minZoom = 0.75
+const [zoom, setZoom] = useState(1-zoomSpeed)
+const [lastScroll, setLastScroll] = useState(0)
+if(typeof window !== 'undefined'){
+
+
+window.addEventListener('scroll',()=>{
+ scroll = window.scrollY
+
+
+  if(zoom < maxZoom && zoom > minZoom){
+  // if(scroll <100){
+  //   setZoom(1)
+  //   setLastScroll(scroll)
+    
+  // }else
+   if(scroll > lastScroll){
+    setZoom(zoom - zoomSpeed)
+    setLastScroll(scroll)
+  }else if(scroll < lastScroll){
+    setZoom(zoom + zoomSpeed)
+    setLastScroll(scroll)
+  }
+
+ }
+
+    
+
+})
+}
   
  
   return (
     <div
       id="Home"
-      style={{}}
-      className=" w-[90%] text-normalText h-screen -mt-10
-    flex items-center justify-center mx-auto "
+style={{scale:zoom,}}
+      className={`
+       w-[90%] h-full fixed top-[10%] left-[5%]   text-normalText  -mt-10
+    flex items-center justify-center mx-auto `}
     >
       {/* <div className='w-'/> */}
       <div
-        className="w-full h-[500px] rounded-[50px] border-8 border-neutral-950 
+        className="w-full h-[500px] rounded-[50px] shadow-[0px_0px_40px_-5px_]
        flex flex-col lg:flex-row items-start lg:items-center justify-evenly px-2 lg:px-20"
       >
         {/* text content  */}
