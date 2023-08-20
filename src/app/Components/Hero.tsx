@@ -75,24 +75,21 @@ const Hero = () => {
           className=" w-full md:w-[80%] lg:w-[60%]
         flex flex-col items-start  gap-y-5  mx-auto"
         >
-          {/* baar  */}
-          <div className="w-20 h-1 bg-secondaryColor bg-neutral-800 " />
+       
 
-          <div className="pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
+          <div className="flex flex-col md:flex-row items-center mx-auto  pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
             <h1 className="flex items-center text-3xl font-semibold lg:text-5xl text-headingText lg:tracking-wider">
               Botonetics
-              <span className="px-4 text-3xl font-bold text-white lg:text-5xl">
+              <span className="hidden md:inline-block px-4 text-3xl font-bold text-white lg:text-5xl">
                 -
               </span>
-              <h3 className="text-base text-normalText font-semibold pt-1.5 flex-shrink-0">
-                {' '}
-                Building Better
-              </h3>
+             
             </h1>
-
-            <h3 className="pt-5 text-base font-semibold text-normalText">
-              Business Byte by Byte.
+            
+            <h3 className="inline-block bg-secondaryColor rounded-sm px-2 mt-5  text-base font-semibold text-white/90 ">
+             Building Better Business Byte by Byte. 
             </h3>
+
           </div>
         </div>
 
