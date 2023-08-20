@@ -1,8 +1,6 @@
 import navFeaturedImg from '../../../public/img1.jpg';
-import navFeatured from '../../../public/img2.png';
 import bloImg from '../../../public/blog.jpg'
 import {AiOutlineLinkedin} from 'react-icons/ai'
-import SocialLinks from '../Components/SocialLinks';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -84,7 +82,7 @@ export const servicesCard = [
   },
   {
     id:1,
-    title:"App developemnt",
+    title:"Full Stack Web-Developemnt",
     description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
     image:navFeaturedImg,
     link:''
@@ -96,34 +94,7 @@ export const servicesCard = [
     image:navFeaturedImg,
     link:''
   },
-  {
-    id:3,
-    title:"App developemnt",
-    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
-    image:navFeaturedImg,
-    link:''
-  },
-  {
-    id:4,
-    title:"App developemnt",
-    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
-    image:navFeaturedImg,
-    link:''
-  },
-  {
-    id:5,
-    title:"App developemnt",
-    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
-    image:navFeaturedImg,
-    link:''
-  },
-  {
-    id:6,
-    title:"App developemnt",
-    description:"tempor Duis eu consequat sunt occaecat ullamco non minim sunt velit eu id eu elit officia minim nisi nostrud.",
-    image:navFeaturedImg,
-    link:''
-  },
+  
   
 ]
 

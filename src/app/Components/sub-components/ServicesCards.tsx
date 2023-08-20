@@ -21,7 +21,7 @@ const ServicesCards:FC<apiI> = ({id,title,description,image,link}) => {
     <>
     <div 
     
-    className=" max-w-[360px]   mx-auto  rounded-lg
+    className=" max-w-[360px]   mx-auto  rounded-[50px]
     flex flex-col items-center justify-start mt-20 text-normalText
     overflow-hidden duration-200 cursor-pointer
     group ">
@@ -30,7 +30,7 @@ const ServicesCards:FC<apiI> = ({id,title,description,image,link}) => {
 {/* image darker */}
 
 <div className='w-full h-full absolute top-0 left-0 bg-neutral-950/10 md:bg-neutral-950/30
- md:group-hover:bg-neutral-950/0  rounded-t-lg'/>
+ md:group-hover:bg-neutral-950/0  rounded-t-[50px]'/>
       <Image
       className='w-full h-full object-cover object-center
       md:group-hover:scale-110 md:duration-200 ease-in'
@@ -43,7 +43,7 @@ const ServicesCards:FC<apiI> = ({id,title,description,image,link}) => {
       </div>
 
       <div className='flex flex-col bg-bg items-center justify-start gap-y-3 w-full h-[45%] 
-      rounded-lg rounded-t-none 
+      rounded-[50px] rounded-t-none 
          '>
            {/* border-b border-r border-l */}
         {/* main heading */}

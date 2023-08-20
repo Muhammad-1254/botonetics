@@ -1,13 +1,57 @@
 'use client';
 
-import React from 'react';
-import { ContactUsAPI } from '../constantAPI/api';
-import { AiOutlineBars, AiOutlineLine } from 'react-icons/ai';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const ContactUs = () => {
+  const formData = {
+    name: '',
+    email: '',
+    contactNumber: '',
+    comapany: '',
+    subject: '',
+    message: '',
+  };
+  const [user, setUser] = useState(formData);
+  const [btnDisabeld, setBtnDisabled] = useState(true);
+
+  const checkFormData = () => {
+    if (
+      user.name.length > 0 &&
+      user.email.length > 0 &&
+      user.message.length > 0 &&
+      user.contactNumber.length > 0
+    ) {
+      setBtnDisabled(false);
+      return true;
+    } else {
+      setBtnDisabled(true);
+      return false;
+    }
+  };
+  useEffect(() => {
+    console.log('use Effect run');
+    checkFormData();
+  }, [user]);
+
+  const buttonHandler = async () => {
+    try {
+      if (checkFormData()) {
+        await axios.post('/api/email', user);
+        setUser(formData);
+        alert("Email Successfully Sent!")
+      } else {
+        alert('Input the required fields!');
+        console.log('alert');
+      }
+    } catch (error: any) {
+      console.log('error: ', error);
+    }
+  };
+
   return (
     <div
-    id='ContactUs'
+      id="ContactUs"
       className="w-full flex bg-bg  flex-col lg:flex-row items-baseline lg:gap-x-10 mx-auto px-4 mt-20 py-10 mb-28
     text-normalText "
     >
@@ -30,35 +74,47 @@ py-4 tracking-widest"
 text-base "
           >
             <input
+              name="name"
+              onChange={(e) => setUser({ ...user, name: e.target.value })}
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm rounded-t"
               type="text"
-              placeholder="First Name*"
+              placeholder="Your Name*"
               required
             />
-            <input
+            {/* <input
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="text"
               placeholder="Last Name*"
               required
-            />
+            /> */}
             <input
+              name="email"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="email"
               placeholder="E-mail*"
               required
             />
             <input
+              name="contactNumber"
+              onChange={(e) =>
+                setUser({ ...user, contactNumber: e.target.value })
+              }
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
-              type="number"
+              type="tel"
               placeholder="+92-333-3333333"
               required
             />
             <input
+              name="company"
+              onChange={(e) => setUser({ ...user, comapany: e.target.value })}
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="text"
               placeholder="Company"
             />
             <textarea
+              name="message"
+              onChange={(e) => setUser({ ...user, message: e.target.value })}
               className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm 
         h-28 w-[81%] md:w-[44%] rounded-b"
               placeholder="Tell us about your project"
@@ -67,11 +123,10 @@ text-base "
 
           {/* input elements till here  */}
 
-
           {/* privacy policy  */}
           <div className="flex items-baseline justify-evenly gap-x-2 mt-5 text-xs  mx-auto max-w-[90%] md:max-w-[60%] ">
-            <input  type='checkbox'  required/>
-            <p className='-mt-1'>
+            <input name="privacyPolicy" type="checkbox" required />
+            <p className="-mt-1">
               By sending this form I confirm that I have read and accept
               Botonetics &nbsp;
               <span className="text-headingText text-sm underline">
@@ -81,11 +136,17 @@ text-base "
           </div>
 
           {/* send button  */}
-          <div className="flex items-center justify-center mx-auto md:max-w-[50%]
+          <div
+            className="flex items-center justify-center mx-auto md:max-w-[50%]
            text-headingText md:text-normalText md:hover:text-headingText  bg-black
            md:duration-200 cursor-pointer
-            mt-10 rounded-lg">
-            <button className="p-2 font-semibold tracking-wider" type="button">
+            mt-10 rounded-lg"
+          >
+            <button
+              onClick={buttonHandler}
+              className={`
+             p-2 font-semibold tracking-wider`}
+            >
               SEND
             </button>
           </div>
@@ -98,8 +159,8 @@ text-base "
         text-normalText " 
       >
         */}
-        {/* heading  */}
-        {/* <h1 className="text-headingText text-start text-lg md:text-xl lg:text-2xl">
+      {/* heading  */}
+      {/* <h1 className="text-headingText text-start text-lg md:text-xl lg:text-2xl">
           WHAT{"'"}S NEXT?
         </h1>
 
@@ -123,10 +184,10 @@ text-base "
           ))}
            <div className='-z-10 absolute w-1 top-[7%]  h-[80%] left-[18px]  my-auto   bg-normalText'/> */}
 
-          {/* square box bars  */}
-          {/* <div className="absolute w-1  h-[80%] bg-headingText  top-0 " /> */}
-      
-        {/* </div>
+      {/* square box bars  */}
+      {/* <div className="absolute w-1  h-[80%] bg-headingText  top-0 " /> */}
+
+      {/* </div>
       </div> */}
     </div>
   );

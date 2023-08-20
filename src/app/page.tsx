@@ -64,7 +64,7 @@ export default function Home() {
     <SocialLinks/>
     <div
        className="-z-10 relative h-[600px] md:h-[550px] lg:h-[450px] mx-auto mt-20 
-       bg-cover   bg-center bg-no-repeat bg-[url(../../public/blog.jpg)] 
+       bg-cover   bg-center bg-no-repeat bg-[url(../../public/footer.jpg)] 
        backdrop-blur-3xl bg-opacity-80 
        "
       >

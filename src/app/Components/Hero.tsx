@@ -86,8 +86,12 @@ const Hero = () => {
              
             </h1>
             
-            <h3 className="inline-block bg-secondaryColor rounded-sm px-2 mt-5  text-base font-semibold text-white/90 ">
-             Building Better Business Byte by Byte. 
+            <h3 className=" mt-5  text-base font-semibold text-white/90 ">
+             Building Better Business 
+             <span className='inline-block bg-slate-600 rounded-sm mx-1 px-2'>
+              Byte by Byte. 
+              
+              </span>
             </h3>
 
           </div>
