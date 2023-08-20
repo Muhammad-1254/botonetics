@@ -24,61 +24,72 @@ const [index, setIndex] = useState(0);
   
   var delay1 = index === 0 ? 1 : 2
   var delay2 = index === 0 ? 2 : 1
+ 
+
+  
+  
+
+
 
 
   return (
-  <>
-  <div style={{width:`${size}px`}} className=''>
-  <motion.div
-    className=" 
-absolute "
-  >
-    <AnimateLogo size={logoSize}/>
 
-    {/* 2nd */}
-
-    <motion.div
-
-      initial='initial'
-      animate='animate'
-      transition={{ delay: delay1, duration: 1 }}
-      variants={variants[index].first}
-      className="absolute "
+    <>
+    <div style={{width:`${size}px`}} className=''>
+    <motion.div 
+    initial='initial'
+    animate='animate'
+    transition={variants[index].first.transition} 
+    variants={variants[index].first.variants}
+      className=" 
+  absolute "
     >
-      <AnimateLogo  size={logoSize}/>
-
-      {/* 3rd  */}
+      <AnimateLogo size={logoSize}/>
+  
+      {/* 2nd */}
+  
+      <motion.div
+  
+        initial='initial'
+        animate='animate'
+        transition={variants[index].second.transition}
+        variants={variants[index].second.variants}
+        className="absolute "
+      >
+        <AnimateLogo  size={logoSize}/>
+  
+        {/* 3rd  */}
+        <motion.div
+          initial='initial'
+          animate='animate'
+          transition={variants[index].third.transition}
+          variants={variants[index].third.variants}
+          className="absolute "
+        >
+          <AnimateLogo size={logoSize}/>
+        </motion.div>
+      </motion.div>
+  
+      {/* 2nd and 3rd ends here  */}
+  
+      {/* 4th  */}
+  
       <motion.div
         initial='initial'
         animate='animate'
-        transition={{ delay: delay2, duration: 1 }}
-        variants={variants[index].second}
-        className="absolute "
+        transition={variants[index].fourth.transition}
+        variants={variants[index].fourth.variants}
+        className="absolute  "
       >
         <AnimateLogo size={logoSize}/>
       </motion.div>
+  
+      {/* 4th ends here  */}
+  
+      {/* 1st ends here  */}
     </motion.div>
-
-    {/* 2nd and 3rd ends here  */}
-
-    {/* 4th  */}
-
-    <motion.div
-      initial='initial'
-      animate='animate'
-      transition={{ delay: delay2, duration: 1 }}
-      variants={variants[index].third}
-      className="absolute  "
-    >
-      <AnimateLogo size={logoSize}/>
-    </motion.div>
-
-    {/* 4th ends here  */}
-
-    {/* 1st ends here  */}
-  </motion.div>
-  </div>
-  </>
+    </div>
+    </>
   )
 }
 
