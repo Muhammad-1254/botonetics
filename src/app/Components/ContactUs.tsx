@@ -52,7 +52,7 @@ const ContactUs = () => {
   return (
     <div
       id="ContactUs"
-      className="w-full flex bg-bg  flex-col lg:flex-row items-baseline lg:gap-x-10 mx-auto px-4 mt-20 py-10 mb-28
+      className="w-full flex   flex-col lg:flex-row items-baseline lg:gap-x-10 mx-auto px-4 mt-20 py-10 mb-28
     text-normalText "
     >
       {/* left  */}

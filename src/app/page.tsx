@@ -35,11 +35,11 @@ export default function Home() {
         <WhyChooseUs />
 
       </div>
-      <div className=" max-w-[400px] md:max-w-[800px] lg:max-w-[1600px] mx-auto">
+      {/* <div className=" max-w-[400px] md:max-w-[800px] lg:max-w-[1600px] mx-auto">
     
         <Services /> 
       
-      </div>
+      </div> */}
 
       {/* <div
         className="   mx-auto mt-20 mb-20

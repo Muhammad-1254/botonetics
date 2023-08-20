@@ -71,13 +71,13 @@ const Hero = () => {
        flex flex-col lg:flex-row items-start lg:items-center justify-evenly px-2 lg:px-20"
       >
         {/* text content  */}
-        <div
+        {/* <div
           className=" w-full md:w-[80%] lg:w-[60%]
         flex flex-col items-start  gap-y-5  mx-auto"
-        >
+        > */}
        
 
-          <div className="flex flex-col md:flex-row items-center mx-auto  pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
+          {/* <div className="flex flex-col md:flex-row items-center mx-auto  pt-10 max-w-[350px] md:max-w-[500px] lg:max-w-[750px] ">
             <h1 className="flex items-center text-3xl font-semibold lg:text-5xl text-headingText lg:tracking-wider">
               Botonetics
               <span className="hidden md:inline-block px-4 text-3xl font-bold text-white lg:text-5xl">
@@ -94,8 +94,19 @@ const Hero = () => {
               </span>
             </h3>
 
-          </div>
-        </div>
+          </div> */}
+
+        {/* </div> */}
+<h3 className="max-w-[95%] overflow-hidden text-center mt-5  text-5xl md:text-6xl font-semibold text-white/90
+ ">
+             Building
+              Better Business&nbsp; 
+              <br className='lg:hidden'/>
+             <span className=' inline bg-slate-600 rounded-sm lg:mx-1 lg:px-2'>
+              Byte by Byte. 
+              
+              </span>
+            </h3>
 
       </div>
     </div>
