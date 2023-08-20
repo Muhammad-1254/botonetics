@@ -49,7 +49,7 @@ const Footer = () => {
    
         <div className=' flex items-center justify-center py-4  md:justify-end md:pr-24'>
 
-        <p className="text-xs md:text-base ">© 2023 Creative Chaos.&nbsp;</p>
+        <p className="text-xs md:text-base ">© 2023 Botonetics.&nbsp;</p>
         <strong className="text-headingText tracking-widest">
           Privacy Policy
         </strong>

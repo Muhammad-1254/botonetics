@@ -35,7 +35,8 @@ const [index, setIndex] = useState(0);
   return (
 
     <>
-    <div style={{width:`${size}px`}} className=''>
+    {/* <div style={{width:`${size}px`,}}
+     className=' '> */}
     <motion.div 
     initial='initial'
     animate='animate'
@@ -88,7 +89,7 @@ const [index, setIndex] = useState(0);
   
       {/* 1st ends here  */}
     </motion.div>
-    </div>
+    {/* </div> */}
     </>
   )
 }

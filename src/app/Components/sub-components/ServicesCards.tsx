@@ -2,8 +2,6 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { FC, useState } from 'react';
 import servicesImg from '../../../../public/img1.jpg';
-import { colors_array } from '@/app/constantAPI/colors';
-import { shapes } from '@/app/constantAPI/shadowCirlce';
 
 
 interface apiI{

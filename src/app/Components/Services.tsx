@@ -12,7 +12,7 @@ const Services = () => {
 {/* text  */}
         <div className='  text-center mx-auto
         text-headingText   text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wider '>
-Services
+What we do
         </div>
 
         {/* cards */}

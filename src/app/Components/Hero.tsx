@@ -5,8 +5,12 @@ import { useScroll } from 'framer-motion';
 
 const Hero = () => {
 
+// const {scrollYProgress} = useScroll()
+// console.log("scrollYProgress: ",scrollYProgress);
+
+
 // media query for logo 
-  let WindowWidth = 0;
+  let WindowWidth = 0
   let logoSize = 0;
   if (typeof window !== 'undefined') {
     WindowWidth = window.innerWidth;
@@ -56,10 +60,10 @@ const Hero = () => {
   return (
     <div
       id="Home"
-// style={{scale:zoom,}}
+
       className={`
        w-[90%] h-full fixed top-[10%] left-[5%]   text-normalText  -mt-10
-    flex items-center justify-center mx-auto dark: `}
+    flex items-center justify-center mx-auto `}
     >
       {/* <div className='w-'/> */}
       <div
@@ -92,10 +96,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* logo  or image*/}
-        {/* <div className="">
-          <LogoAnimation size={logoSize} />
-        </div> */}
       </div>
     </div>
   );

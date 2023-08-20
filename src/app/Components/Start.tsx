@@ -23,7 +23,7 @@ const Start = () => {
 
 
 
-<div className='absolute top-40 left-[20%] md:left-[30%]'>
+<div className='absolute top-40 left-[12%] md:left-[30%] p'>
 
       <LogoAnimation size={1000}/>
 </div>

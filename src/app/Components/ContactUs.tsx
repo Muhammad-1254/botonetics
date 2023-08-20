@@ -20,7 +20,7 @@ const ContactUs = () => {
           className="text-headingText font-bold md:font-semibold text-lg md:text-xl lg:text-2xl capitalize 
 py-4 tracking-widest"
         >
-          Contact us
+          E-mail Us
         </h1>
 
         <div className="bg-neutral-900  p-10 rounded-lg">
@@ -93,12 +93,13 @@ text-base "
       </div>
 
       {/* right  */}
-      <div
+      {/* <div
         className="flex-1 flex flex-col justify-evenly items-start pt-14 lg:pt-0 
-        text-normalText "
+        text-normalText " 
       >
+        */}
         {/* heading  */}
-        <h1 className="text-headingText text-start text-lg md:text-xl lg:text-2xl">
+        {/* <h1 className="text-headingText text-start text-lg md:text-xl lg:text-2xl">
           WHAT{"'"}S NEXT?
         </h1>
 
@@ -120,12 +121,13 @@ text-base "
             </div>
             
           ))}
-           <div className='-z-10 absolute w-1 top-[7%]  h-[80%] left-[18px]  my-auto   bg-normalText'/>
+           <div className='-z-10 absolute w-1 top-[7%]  h-[80%] left-[18px]  my-auto   bg-normalText'/> */}
 
           {/* square box bars  */}
           {/* <div className="absolute w-1  h-[80%] bg-headingText  top-0 " /> */}
-        </div>
-      </div>
+      
+        {/* </div>
+      </div> */}
     </div>
   );
 };

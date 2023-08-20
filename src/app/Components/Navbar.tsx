@@ -1,27 +1,21 @@
 'use client';
 
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { navApi } from '../constantAPI/api';
 import Link from 'next/link';
 import {
-  
   AiOutlineLinkedin,
-
   AiOutlineMenuFold,
   AiOutlineMenuUnfold,
   AiOutlineRight,
-
 } from 'react-icons/ai';
-import {motion,useScroll} from 'framer-motion'
-
+import { motion, useScroll } from 'framer-motion';
 
 import LogoAnimation from './sub-components/LogoAnimation';
 
 const Navbar = () => {
-
-// progress bar 
-const {scrollYProgress} =useScroll()
-
+  // progress bar
+  const { scrollYProgress } = useScroll();
 
   // const [isHover, setHover] = useState(false);
   const [nav, setNav] = useState(false);
@@ -31,32 +25,29 @@ const {scrollYProgress} =useScroll()
 
   // sub meanu handler if 2 times prees than equal to  null
 
-
-    // console.log("scrollYProgress:, ",scrollYProgress.get());
-
-    
+  // console.log("scrollYProgress:, ",scrollYProgress.get());
 
   return (
-    <> 
-    <motion.div className=' w-full h-1 z-[9999] bg-white sticky  top-0' style={{scaleX:scrollYProgress}}/>
+    <>
+      <motion.div
+        className=" w-full h-1 z-[9999] bg-white/90 sticky  top-0"
+        style={{ scaleX: scrollYProgress }}
+      />
 
-    
-      <motion.header 
-        className="z-[100] w-full    sticky top-0 
+      <motion.header
+        className="z-[100] w-full    fixed top-0 
  bg-neutral-950/90  text-normalText 
     overflow-hidden  md:py-3 lg:py-5
     "
       >
-    
         <div className="relative  flex items-center justify-between h-full px-3 rounded-b-md  ">
           {/* left side  logo and name*/}
           <Link
             href={'/'}
-            className="flex items-center justify-normal gap-x-2 md:gap-x-10 group/logo"
+            className="flex items-center  gap-x-2 md:gap-x-10 group/logo"
           >
-            <div className=" w-[10%] md:w-[30%] flex items-center justify-center -mt-5 mb-5  md:ml-5 lg:ml-10  py-8 md:group-hover/logo:scale-110 duration-200 ease-out">
-            
-              <LogoAnimation size={120}/>
+            <div className="w-[60px] h-[60px]  flex items-center justify-center  mb-5  md:ml-5 lg:ml-10  py-8 md:group-hover/logo:scale-110 duration-200 ease-out">
+              <LogoAnimation size={120} />
             </div>
             <h1
               className="text-4xl font-rem text-headingText font-bold
@@ -85,10 +76,10 @@ const {scrollYProgress} =useScroll()
               </span>
             )}
           </div>
+
+
         </div>
       </motion.header>
-
-
 
       {/* nav bar items  */}
       <div
@@ -103,8 +94,7 @@ const {scrollYProgress} =useScroll()
       w-full h-full
       "
         >
-          {navApi?.map(({ id, link , Icon, dropDown, title }) => {
-
+          {navApi?.map(({ id, link, Icon, dropDown, title }) => {
             return (
               <li
                 className={`${dropDown && 'flex items-center gap-x-2'}
@@ -116,9 +106,9 @@ const {scrollYProgress} =useScroll()
                   <Link
                     className="flex items-end justify-center gap-x-4
                hover:text-blue-500 duration-200  "
-                    href={link} 
-                    target='_blank'
-                    onClick={()=>setNav(!nav)}
+                    href={link}
+                    target="_blank"
+                    onClick={() => setNav(!nav)}
                   >
                     <AiOutlineLinkedin size={50} />
                     <span>Linkedin</span>
@@ -126,7 +116,9 @@ const {scrollYProgress} =useScroll()
                 ) : (
                   <>
                     <Link
-                      onClick={() => {dropDown ? setSubMenu(!subMenu) :setNav(!nav)}}
+                      onClick={() => {
+                        dropDown ? setSubMenu(!subMenu) : setNav(!nav);
+                      }}
                       className={`overflow-hidden`}
                       href={link}
                     >
@@ -145,9 +137,9 @@ const {scrollYProgress} =useScroll()
                 {dropDown ? (
                   <div
                     className={` z-40 bg-neutral-800 overflow-hidden
-max-w-[80%]  left-[10%] right-[10%]   max-h-0 w-full
-flex flex-col items-center  justify-center gap-y-10
-${subMenu ? 'max-w-[80%] max-h-full  ' : ''}
+                      max-w-[80%]  left-[10%] right-[10%]   max-h-0 w-full
+                      flex flex-col items-center  justify-center gap-y-10
+                      ${subMenu ? 'max-w-[80%] max-h-full  ' : ''}
 
       md:group-hover/nav:max-w-[50%]  lg:group-hover/nav:max-w-[40%]
       md:group-hover/nav:max-h-[50%] 
@@ -160,14 +152,13 @@ ${subMenu ? 'max-w-[80%] max-h-full  ' : ''}
                   >
                     {dropDown.map(({ id, link, title }) => (
                       <div key={id}>
-                        <Link
-                        onClick={()=>setNav(!nav)}
-                        
-                        href={link}>{title}</Link>
+                        <Link onClick={() => setNav(!nav)} href={link}>
+                          {title}
+                        </Link>
                       </div>
                     ))}
                   </div>
-                ) :null}
+                ) : null}
               </li>
             );
           })}
