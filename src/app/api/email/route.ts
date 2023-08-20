@@ -23,7 +23,7 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
       subject,
     }: TFormData = user;
 
-    await sendEmail(user);
+    await sendEmail({name,subject,comapany,contactNumber,message,reciverEmail:email});
     return NextResponse.json(
       {
         message: 'email sent successfully',

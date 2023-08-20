@@ -39,7 +39,7 @@ const ContactUs = () => {
       if (checkFormData()) {
         await axios.post('/api/email', user);
         setUser(formData);
-        alert("Email Successfully Sent!")
+        alert('Email Successfully Sent!');
       } else {
         alert('Input the required fields!');
         console.log('alert');
@@ -67,7 +67,7 @@ py-4 tracking-widest"
           E-mail Us
         </h1>
 
-        <div className="bg-neutral-900  p-10 rounded-lg">
+        <div className="bg-neutral-900  p-10 rounded-[50px]">
           {/* input elements  */}
           <div
             className="flex flex-col items-center justify-evenly gap-4  
@@ -76,21 +76,18 @@ text-base "
             <input
               name="name"
               onChange={(e) => setUser({ ...user, name: e.target.value })}
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm rounded-t"
+              value={user.name}
+              className="p-1 w-full md:w-[70%] placeholder:text-center placeholder:text-xs placeholder:md:text-sm rounded-t"
               type="text"
               placeholder="Your Name*"
               required
             />
-            {/* <input
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
-              type="text"
-              placeholder="Last Name*"
-              required
-            /> */}
+
             <input
               name="email"
               onChange={(e) => setUser({ ...user, email: e.target.value })}
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
+              value={user.email}
+              className="w-full md:w-[70%] p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="email"
               placeholder="E-mail*"
               required
@@ -100,7 +97,8 @@ text-base "
               onChange={(e) =>
                 setUser({ ...user, contactNumber: e.target.value })
               }
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
+              value={user.contactNumber}
+              className="p-1 w-full md:w-[70%] placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="tel"
               placeholder="+92-333-3333333"
               required
@@ -108,15 +106,25 @@ text-base "
             <input
               name="company"
               onChange={(e) => setUser({ ...user, comapany: e.target.value })}
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
+              value={user.comapany}
+              className="p-1 w-full md:w-[70%] placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
               type="text"
               placeholder="Company"
+            />
+            <input
+              name="subject"
+              onChange={(e) => setUser({ ...user, subject: e.target.value })}
+              value={user.subject}
+              className="p-1 w-full md:w-[70%] placeholder:text-center placeholder:text-xs placeholder:md:text-sm"
+              type="text"
+              placeholder="subject"
             />
             <textarea
               name="message"
               onChange={(e) => setUser({ ...user, message: e.target.value })}
-              className="p-1 placeholder:text-center placeholder:text-xs placeholder:md:text-sm 
-        h-28 w-[81%] md:w-[44%] rounded-b"
+              value={user.message}
+              className="p-1 w-full md:w-[70%] placeholder:text-center placeholder:text-xs placeholder:md:text-sm 
+              h-28 rounded-b"
               placeholder="Tell us about your project"
             />
           </div>

@@ -1,4 +1,3 @@
-import HtmlGmail from '@/app/Components/sub-components/GmailFormat';
 import Nodemailer from 'nodemailer'
 
 
@@ -17,8 +16,8 @@ const config ={
     host:'smtp.gmail.com',
     secure:true,
     auth:{
-        user:process.env.EMAIL!,
-        pass:process.env.PW!
+        user:process.env.NODEMAILER_EMAIL!,
+        pass:process.env.NODEMAILER_PW!
     }
 }
 
@@ -37,20 +36,28 @@ reciverEmail,
 
     const mailData = {
         from:reciverEmail,
-        to:process.env.EMAIL!,
+        to:process.env.NODEMAILER_EMAIL!,
         subject,
         message,
-        html:`<div>${HtmlGmail}</div>`
+        html:` <div>
+            <h1>name: ${name}</h1>
+            <h3>subject: ${subject}</h3>
+            <p>company: ${comapany}</p>
+            <p>message: ${message}</p>
+            <strong>Contact: ${contactNumber}<br/>${reciverEmail}</strong>
+        </div>`
     }
+
+
 
     const transporter = Nodemailer.createTransport(config);
 
     transporter.sendMail(mailData,(error,info)=>{
         if(error){
-            console.log("error: ",error);
+            // console.log("error: ",error);
          return;   
         }else{
-            console.log("info: ",info);
+            // console.log("info: ",info);
             return;
             
         }
