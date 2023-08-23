@@ -97,7 +97,7 @@ const Hero = () => {
           </div> */}
 
         {/* </div> */}
-<h3 className="max-w-[95%] overflow-hidden text-center mt-5  text-5xl md:text-6xl font-semibold text-white/90
+<h3 className="max-w-[95%] overflow-hidden text-center mt-5  text-[45px]  md:text-6xl font-semibold text-white/90
  ">
              Building
               Better Business&nbsp; 
