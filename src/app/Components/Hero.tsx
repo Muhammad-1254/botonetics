@@ -100,12 +100,13 @@ const Hero = () => {
 <h3 className="max-w-[95%] overflow-hidden text-center mt-5  text-[45px]  md:text-6xl font-semibold text-white/90
  ">
              Building
-              Better Business&nbsp; 
+              Better Businesses&nbsp; 
               <br className='lg:hidden'/>
              <span className=' inline bg-slate-600 rounded-sm lg:mx-1 lg:px-2'>
-              Byte by Byte. 
+              Byte by Byte
               
               </span>
+              . 
             </h3>
 
       </div>
