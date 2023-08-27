@@ -30,7 +30,7 @@ const ContactUs = () => {
     }
   };
   useEffect(() => {
-    console.log('use Effect run');
+    // console.log('use Effect run');
     checkFormData();
   }, [user]);
 
@@ -42,10 +42,10 @@ const ContactUs = () => {
         alert('Email Successfully Sent!');
       } else {
         alert('Input the required fields!');
-        console.log('alert');
+        // console.log('alert');
       }
     } catch (error: any) {
-      console.log('error: ', error);
+      // console.log('error: ', error);
     }
   };
 
