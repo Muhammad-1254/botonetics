@@ -51,34 +51,34 @@ const WhyChooseUs = () => {
         {/* <div className=" text-sm  lg:text-xl max-w-[95%] lg:max-w-[80%] mx-auto text-center text-ellipsis mt-10">
           {whyChooseUsAPI.description}
         </div> */}
-<div className='max-w-[90%] md:max-w-[60%] lg:max-w-[40%] mx-auto px-5 mt-10
+<div className='w-[90%] md:w-[60%] lg:w-[40%] mx-auto px-5 mt-10
 text-sm md:text-base lg:text-lg'>
 <p>Botonetics is a name that seamlessly blends &quot;bot&quot; and &quot;netics&quot;. &quot;Bot&quot; signifies automated agents and robots, while &quot;netics&quot; draws from the Greek term &quot;kinesis&quot;, signifying &quot;movement&quot;.</p>
-
+<br/>
 <p>This fusion of &quot;bot&quot; and &quot;netics&quot; reflects our unwavering commitment to pioneering software solutions driven by automation and motion.</p>
-
-<p>The &quot;bot&quot; essence encapsulates our resolute belief in automation's potential. We firmly hold that automation streamlines operations, conserves time and resources, and enhances overall efficiency. Our dedication lies in crafting software solutions that automate tasks and processes, freeing human staff to focus on creative and strategic endeavors.</p>
-
+<br/>
+<p>The &quot;bot&quot; essence encapsulates our resolute belief in automation{"'"}s potential. We firmly hold that automation streamlines operations, conserves time and resources, and enhances overall efficiency. Our dedication lies in crafting software solutions that automate tasks and processes, freeing human staff to focus on creative and strategic endeavors.</p>
+<br/>
 <p>The &quot;netics&quot; facet embodies our faith in the power of adaptability and movement. We firmly believe that software can create adaptable, fluid systems capable of responding to changes. Our focus is on developing software solutions that possess agility and flexibility to align with the evolving needs of our clients.</p>
-
+<br/>
 <p>Our tagline, &quot;Building Better Business Byte by Byte&quot;, epitomizes our commitment to delivering optimal software solutions to our clients. Tasks that traditionally require manual effort or significant human resources can be effectively accomplished through automation. We are confident that by harnessing our software engineering skills, we can empower businesses to enhance their efficiency, productivity, and prosperity.</p>
-
+<br/>
 <p>We take immense pride in bearing the Botonetics name and eagerly anticipate the bright future that awaits both our company and our clients.</p>
 
-        <p className=''>
-        {/* Welcome to Botonetics, where our identity signifies a commitment beyond words  &nbsp;{"–"}&nbsp; a dedication that shapes solutions in sync with your evolving needs. Our expertise goes beyond software; we design complete digital ecosystems, transcending trends to set new standards.
+        {/* <p className=''>
+        Welcome to Botonetics, where our identity signifies a commitment beyond words  &nbsp;{"–"}&nbsp; a dedication that shapes solutions in sync with your evolving needs. Our expertise goes beyond software; we design complete digital ecosystems, transcending trends to set new standards.
 
 In harmony with the rapid pace of modern business, we've ingrained the Agile methodology into our core. Agile is more than a buzzword; it's our guiding philosophy. Through rapid iterations, we deliver tangible outcomes at an accelerated pace. With each sprint, your vision takes form, empowering an earlier transition to production.
 
-Welcome to Botonetics  &nbsp;{"–"}&nbsp; where commitment fuels innovation, and Agile principles drive results. */}
-          {/* Welcome to Botonetics, where our name signifies more than just letters
+Welcome to Botonetics  &nbsp;{"–"}&nbsp; where commitment fuels innovation, and Agile principles drive results.
+          Welcome to Botonetics, where our name signifies more than just letters
          &nbsp;{"–"}&nbsp;it embodies our unwavering dedication. We transcend mere service
           provision; we craft dynamic solutions that adapt alongside your
           ever-evolving requirements. Our expertise extends beyond software
           development; we architect complete digital ecosystems. Instead of
-          following trends, we establish new benchmarks. */}
+          following trends, we establish new benchmarks.
         </p>
-        <br/>
+        <br/> */}
        
 </div>
       </div>
