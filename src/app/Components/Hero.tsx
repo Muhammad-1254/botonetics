@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useScroll } from 'framer-motion';
 
 const Hero = () => {
 

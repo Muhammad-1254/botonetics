@@ -54,23 +54,22 @@ const WhyChooseUs = () => {
 <div className='max-w-[90%] md:max-w-[60%] lg:max-w-[40%] mx-auto px-5 mt-10
 text-sm md:text-base lg:text-lg'>
 
+
+          <p className=''>
+            
+
+          </p>
         <p className=''>
-          Welcome to Botonetics, where our name signifies more than just letters
+       
+          {/* Welcome to Botonetics, where our name signifies more than just letters
          &nbsp;{"–"}&nbsp;it embodies our unwavering dedication. We transcend mere service
           provision; we craft dynamic solutions that adapt alongside your
           ever-evolving requirements. Our expertise extends beyond software
           development; we architect complete digital ecosystems. Instead of
-          following trends, we establish new benchmarks.
+          following trends, we establish new benchmarks. */}
         </p>
         <br/>
-        <p className=''>
-          Embracing the relentless pace of modern business, we{"'"}ve woven the
-          Agile methodology into the fabric of our approach. Agile is not a mere
-          buzzword; It{"'"}s our guiding philosophy. Through swift iterations, we
-          deliver tangible outcomes at an accelerated pace. With each sprint,
-          your vision materializes, granting you the power to transition your
-          software to production sooner than anticipated.
-        </p>
+       
 </div>
       </div>
     </div>
