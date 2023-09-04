@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-
+import { whyChooseUsAPI } from '../constantAPI/api';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 const WhyChooseUs = () => {
   return (
@@ -55,11 +56,25 @@ text-sm md:text-base lg:text-lg'>
 
 
           <p className=''>
-            
+          Botonetics is a name that seamlessly blends "bot" and "netics." "Bot" signifies automated agents and robots, while "netics" draws from the Greek term "kinesis," signifying "movement."
+
+This fusion of "bot" and "netics" reflects our unwavering commitment to pioneering software solutions driven by automation and motion.
+
+The "bot" essence encapsulates our resolute belief in automation's potential. We firmly hold that automation streamlines operations, conserves time and resources, and enhances overall efficiency. Our dedication lies in crafting software solutions that automate tasks and processes, freeing human staff to focus on creative and strategic endeavors.
+
+The "netics" facet embodies our faith in the power of adaptability and movement. We firmly believe that software can create adaptable, fluid systems capable of responding to changes. Our focus is on developing software solutions that possess agility and flexibility to align with the evolving needs of our clients.
+
+Our tagline, "Building Better Business Byte by Byte," epitomizes our commitment to delivering optimal software solutions to our clients. Tasks that traditionally require manual effort or significant human resources can be effectively accomplished through automation. We are confident that by harnessing our software engineering skills, we can empower businesses to enhance their efficiency, productivity, and prosperity.
+
+We take immense pride in bearing the Botonetics name and eagerly anticipate the bright future that awaits both our company and our clients.
 
           </p>
         <p className=''>
-       
+        {/* Welcome to Botonetics, where our identity signifies a commitment beyond words  &nbsp;{"–"}&nbsp; a dedication that shapes solutions in sync with your evolving needs. Our expertise goes beyond software; we design complete digital ecosystems, transcending trends to set new standards.
+
+In harmony with the rapid pace of modern business, we've ingrained the Agile methodology into our core. Agile is more than a buzzword; it's our guiding philosophy. Through rapid iterations, we deliver tangible outcomes at an accelerated pace. With each sprint, your vision takes form, empowering an earlier transition to production.
+
+Welcome to Botonetics  &nbsp;{"–"}&nbsp; where commitment fuels innovation, and Agile principles drive results. */}
           {/* Welcome to Botonetics, where our name signifies more than just letters
          &nbsp;{"–"}&nbsp;it embodies our unwavering dedication. We transcend mere service
           provision; we craft dynamic solutions that adapt alongside your
