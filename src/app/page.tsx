@@ -1,11 +1,8 @@
 'use client';
 
-import Featured from './Components/Featured';
 import Hero from './Components/Hero';
-import Services from './Components/Services';
 import WhyChooseUs from './Components/WhyChooseUs';
 import ContactUs from './Components/ContactUs';
-import Blog from './Components/Blog';
 import SocialLinks from './Components/SocialLinks';
 import Footer from './Components/Footer';
 import Start from './Components/Start';

@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import { whyChooseUsAPI } from '../constantAPI/api';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+
 
 const WhyChooseUs = () => {
   return (
