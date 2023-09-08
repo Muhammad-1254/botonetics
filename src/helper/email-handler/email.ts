@@ -5,7 +5,7 @@ export type TSendEmail ={
     name: string,
     reciverEmail: string,
     contactNumber: string,
-    comapany: string,
+    company: string,
     subject: string,
     message: string,
   };
@@ -28,7 +28,7 @@ export const sendEmail = async ({
 reciverEmail,
   subject,
   message,
-  comapany,
+  company,
   contactNumber,
 
 }: TSendEmail) => {
@@ -42,7 +42,7 @@ reciverEmail,
         html:` <div>
             <h1>name: ${name}</h1>
             <h3>subject: ${subject}</h3>
-            <p>company: ${comapany}</p>
+            <p>company: ${company}</p>
             <p>message: ${message}</p>
             <strong>Contact: ${contactNumber}<br/>${reciverEmail}</strong>
         </div>`
@@ -50,9 +50,9 @@ reciverEmail,
 
 
 
-    const transporter = Nodemailer.createTransport(config);
+    const transporter =await Nodemailer.createTransport(config);
 
-    transporter.sendMail(mailData,(error,info)=>{
+     await transporter.sendMail(mailData,(error,info)=>{
         if(error){
             // console.log("error: ",error);
          return;   

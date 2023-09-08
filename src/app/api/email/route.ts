@@ -6,7 +6,7 @@ type TFormData = {
   name: string;
   email: string;
   contactNumber: string;
-  comapany: string;
+  company: string;
   subject: string;
   message: string;
 };
@@ -19,11 +19,11 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
       email,
       contactNumber,
       message,
-      comapany,
+      company,
       subject,
     }: TFormData = user;
 
-    await sendEmail({name,subject,comapany,contactNumber,message,reciverEmail:email});
+    await sendEmail({name,subject,company,contactNumber,message,reciverEmail:email});
     return NextResponse.json(
       {
         message: 'email sent successfully',
