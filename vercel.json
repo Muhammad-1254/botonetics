@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/subdomain1/(.*)", "dest": "/subdomain1/$1" },
+      { "src": "/subdomain2/(.*)", "dest": "/subdomain2/$1" }
+    ]
+  }
